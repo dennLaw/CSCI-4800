@@ -6,6 +6,14 @@
         studentList = New List(Of Student)
     End Sub
 
+    Public Sub New(ByVal sstudentList As List(Of Student))
+        studentList = sstudentList
+    End Sub
+
+    Public Sub New(ByVal sstudentList As StudentList)
+        studentList = New List(Of Student)
+    End Sub
+
     Public Sub addStudent(ByVal last As String, ByVal first As String, ByVal id As Integer, ByVal hours As Integer, ByVal email As String, ByVal tryToFlag As Boolean)
         studentList.Add(New Student(last, first, id, hours, email, tryToFlag))
     End Sub
@@ -122,13 +130,26 @@
                 Select currentStudent
         End If
 
-        Return returnList
+        Return New StudentList(returnList)
     End Function
 
     'Returns any Students with any field matching searchFor.
     Public Function searchBy(ByVal searchFor As String) As StudentList
         Dim returnList = New StudentList()
 
-        Return returnList
+        returnList =
+                From currentStudent In studentList
+                Let search = currentStudent.getFlagged()
+                Where currentStudent.getFirst().IndexOf(searchFor) <> -1 Or
+                    currentStudent.getLast().IndexOf(searchFor) <> -1 Or
+                    CStr(currentStudent.getID()).IndexOf(searchFor) <> -1 Or
+                    CStr(currentStudent.getHours()).IndexOf(searchFor) <> -1 Or
+                    currentStudent.getEmail().IndexOf(searchFor) <> -1 Or
+                    CStr(currentStudent.getComplete()).IndexOf(searchFor) <> -1 Or
+                    CStr(currentStudent.getFlagged()).IndexOf(searchFor) <> -1
+                Order By search Ascending
+                Select currentStudent
+
+        Return New StudentList(returnList)
     End Function
 End Class
