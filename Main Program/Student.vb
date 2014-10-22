@@ -74,6 +74,14 @@
         isFlagged = False
     End Sub
 
+    Public Sub forceUnflag()
+        isFlagged = False
+    End Sub
+
+    Public Sub forceFlag()
+        isFlagged = True
+    End Sub
+
     'Tries to flag the account
     'If the course isn't completed and hours are above 30, then flag is turns to true.
     Public Sub tryToFlag()

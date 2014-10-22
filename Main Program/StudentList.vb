@@ -29,6 +29,21 @@
         studentList.Remove(student)
     End Sub
 
+    'Flags the first Student matching the passed in student.
+    Public Sub flagStudent(ByVal student As Student)
+        studentList.Find(Function(e) e.Equals(student)).forceFlag()
+    End Sub
+
+    'Unflags the first Student matching the passed in student.
+    Public Sub unflagStudent(ByVal student As Student)
+        studentList.Find(Function(e) e.Equals(student)).forceUnflag()
+    End Sub
+
+    'Flags the first Student matching the passed in student.
+    Public Sub completeStudent(ByVal student As Student)
+        studentList.Find(Function(e) e.Equals(student)).setComplete()
+    End Sub
+
     'Returns a new StudentList sorted as requested.
     'If the fieldNumber is  0: Sort by First Name
     '                       1: Sort by Last Name
@@ -39,6 +54,8 @@
     '                       6: Sort by Flag
     'The variable upOrDown should be    0: Increasing Order
     '                                   1: Decreasing Order
+    '
+    'On incorrect input, will return an empty list.
     Public Function sortBy(ByVal fieldNumber As Integer, ByVal upOrDown As Integer) As StudentList
         Dim returnList = New StudentList()
 
@@ -164,6 +181,66 @@
         Return New StudentList(returnList)
     End Function
 
+    'Returns flagged.
+    'Ordered Last-First
+    Public Function getFlagged() As StudentList
+        Dim returnList = New StudentList()
+
+        returnList =
+                From currentStudent In studentList
+                Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
+                Where currentStudent.getComplete()
+                Order By search Ascending
+                Select currentStudent
+
+        Return New StudentList(returnList)
+    End Function
+
+    'Returns those without flags.
+    'Ordered Last-First
+    Public Function getNonFlagged() As StudentList
+        Dim returnList = New StudentList()
+
+        returnList =
+                From currentStudent In studentList
+                Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
+                Where currentStudent.getComplete()
+                Order By search Ascending
+                Select currentStudent
+
+        Return New StudentList(returnList)
+    End Function
+
+    'Returns those that completed the course
+    'Ordered Last-First
+    Public Function getComplete() As StudentList
+        Dim returnList = New StudentList()
+
+        returnList =
+                From currentStudent In studentList
+                Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
+                Where currentStudent.getComplete()
+                Order By search Ascending
+                Select currentStudent
+
+        Return New StudentList(returnList)
+    End Function
+
+    'Returns those that have not completed the course
+    'Ordered Last-First
+    Public Function getIncomplete() As StudentList
+        Dim returnList = New StudentList()
+
+        returnList =
+                From currentStudent In studentList
+                Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
+                Where Not currentStudent.getComplete()
+                Order By search Ascending
+                Select currentStudent
+
+        Return New StudentList(returnList)
+    End Function
+
     'Returns the Student saved at index.
     Public Function getIndex(ByVal index As Integer) As Student
         If (index < studentList.Count) Then
@@ -176,5 +253,18 @@
     'Returns size of the list.
     Public Function getCount() As Integer
         Return studentList.Count
+    End Function
+
+    'Gets the average time of the list.
+    Public Function getAvgTime() As Double
+        Dim sum As Double = 0
+
+        For Each currentStudent In studentList
+            If (currentStudent.getTime <> -1) Then
+                sum += currentStudent.getTime()
+            End If
+        Next
+
+        Return (sum / CDbl(studentList.Count))
     End Function
 End Class
