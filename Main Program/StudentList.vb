@@ -42,98 +42,98 @@
     Public Function sortBy(ByVal fieldNumber As Integer, ByVal upOrDown As Integer) As StudentList
         Dim returnList = New StudentList()
 
-        If fieldNumber = 0 & upOrDown = 0 Then
+        If fieldNumber = 0 And upOrDown = 0 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getFirst() & ", " & currentStudent.getLast()
                 Order By search Ascending
                 Select currentStudent
 
-        ElseIf fieldNumber = 0 & upOrDown = 1 Then
+        ElseIf fieldNumber = 0 And upOrDown = 1 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getFirst() & ", " & currentStudent.getLast()
                 Order By search Descending
                 Select currentStudent
 
-        ElseIf fieldNumber = 1 & upOrDown = 0 Then
+        ElseIf fieldNumber = 1 And upOrDown = 0 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
                 Order By search Ascending
                 Select currentStudent
 
-        ElseIf fieldNumber = 1 & upOrDown = 1 Then
+        ElseIf fieldNumber = 1 And upOrDown = 1 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
                 Order By search Descending
                 Select currentStudent
 
-        ElseIf fieldNumber = 2 & upOrDown = 0 Then
+        ElseIf fieldNumber = 2 And upOrDown = 0 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getID()
                 Order By search Ascending
                 Select currentStudent
 
-        ElseIf fieldNumber = 2 & upOrDown = 1 Then
+        ElseIf fieldNumber = 2 And upOrDown = 1 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getID()
                 Order By search Descending
                 Select currentStudent
 
-        ElseIf fieldNumber = 3 & upOrDown = 0 Then
+        ElseIf fieldNumber = 3 And upOrDown = 0 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getHours()
                 Order By search Ascending
                 Select currentStudent
 
-        ElseIf fieldNumber = 3 & upOrDown = 1 Then
+        ElseIf fieldNumber = 3 And upOrDown = 1 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getHours()
                 Order By search Descending
                 Select currentStudent
 
-        ElseIf fieldNumber = 4 & upOrDown = 0 Then
+        ElseIf fieldNumber = 4 And upOrDown = 0 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getEmail()
                 Order By search Ascending
                 Select currentStudent
 
-        ElseIf fieldNumber = 4 & upOrDown = 1 Then
+        ElseIf fieldNumber = 4 And upOrDown = 1 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getEmail()
                 Order By search Descending
                 Select currentStudent
 
-        ElseIf fieldNumber = 5 & upOrDown = 0 Then
+        ElseIf fieldNumber = 5 And upOrDown = 0 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getComplete()
                 Order By search Ascending
                 Select currentStudent
 
-        ElseIf fieldNumber = 5 & upOrDown = 1 Then
+        ElseIf fieldNumber = 5 And upOrDown = 1 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getComplete()
                 Order By search Descending
                 Select currentStudent
 
-        ElseIf fieldNumber = 6 & upOrDown = 0 Then
+        ElseIf fieldNumber = 6 And upOrDown = 0 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getFlagged()
                 Order By search Ascending
                 Select currentStudent
 
-        ElseIf fieldNumber = 6 & upOrDown = 1 Then
+        ElseIf fieldNumber = 6 And upOrDown = 1 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getFlagged()

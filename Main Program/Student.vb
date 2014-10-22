@@ -20,7 +20,7 @@
         email = eemail
         timeToComplete = -1
 
-        If (tryToFlag & hhours > 30) Then
+        If (tryToFlag And hhours > 30) Then
             isFlagged = True
         Else
             isFlagged = False
