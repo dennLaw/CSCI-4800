@@ -14,8 +14,19 @@
         studentList = New List(Of Student)
     End Sub
 
+    'Adds a Student to the list of the parameters passed in.
     Public Sub addStudent(ByVal last As String, ByVal first As String, ByVal id As Integer, ByVal hours As Integer, ByVal email As String, ByVal tryToFlag As Boolean)
         studentList.Add(New Student(last, first, id, hours, email, tryToFlag))
+    End Sub
+
+    'Adds a Student to the list.
+    Public Sub addStudent(ByVal student As Student)
+        studentList.Add(student)
+    End Sub
+
+    'Removes the first occurence of an object matching the "Student" passed in exactly.
+    Public Sub removeStudent(ByVal student As Student)
+        studentList.Remove(student)
     End Sub
 
     'Returns a new StudentList sorted as requested.
@@ -151,5 +162,19 @@
                 Select currentStudent
 
         Return New StudentList(returnList)
+    End Function
+
+    'Returns the Student saved at index.
+    Public Function getIndex(ByVal index As Integer) As Student
+        If (index < studentList.Count) Then
+            Return studentList(index)
+        Else
+            Return New Student("", "", -1, -1, "", False)
+        End If
+    End Function
+
+    'Returns size of the list.
+    Public Function getCount() As Integer
+        Return studentList.Count
     End Function
 End Class
