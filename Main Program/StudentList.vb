@@ -29,6 +29,12 @@
         studentList.Remove(student)
     End Sub
 
+    'Attempts to flag the first Student matching the passed in student.
+    'If student has less than 30 hours, will not flag.
+    Public Sub tryToFlag(ByVal student As Student)
+        studentList.Find(Function(e) e.Equals(student)).tryToFlag()
+    End Sub
+
     'Flags the first Student matching the passed in student.
     Public Sub flagStudent(ByVal student As Student)
         studentList.Find(Function(e) e.Equals(student)).forceFlag()
@@ -241,9 +247,40 @@
         Return New StudentList(returnList)
     End Function
 
+    'Returns those that have less than thirty hours.
+    'Ordered Last-First
+    Public Function getLessThanThirtyHours() As StudentList
+        Dim returnList = New StudentList()
+
+        returnList =
+                From currentStudent In studentList
+                Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
+                Where currentStudent.getHours() < 30
+                Order By search Ascending
+                Select currentStudent
+
+        Return New StudentList(returnList)
+    End Function
+
+    'Returns those that have more than or equal to than thirty hours.
+    'Ordered Last-First
+    Public Function getMoreThanThirtyHours() As StudentList
+        Dim returnList = New StudentList()
+
+        returnList =
+                From currentStudent In studentList
+                Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
+                Where currentStudent.getHours() >= 30
+                Order By search Ascending
+                Select currentStudent
+
+        Return New StudentList(returnList)
+    End Function
+
     'Returns the Student saved at index.
+    'If index is invalid, returns dummy.
     Public Function getIndex(ByVal index As Integer) As Student
-        If (index < studentList.Count) Then
+        If (index < studentList.Count And index > -1) Then
             Return studentList(index)
         Else
             Return New Student("", "", -1, -1, "", False)
@@ -267,4 +304,65 @@
 
         Return (sum / CDbl(studentList.Count))
     End Function
+
+    'Takes in filePath as the CSV to read in.
+    'Takes tryToFlag to pass into the new students.
+    'Assumes the CSV is completely correct.
+    Public Sub readCSV(ByVal filePath As String, ByVal tryToFlag As Boolean)
+
+        Try
+            Using MyReader As New Microsoft.VisualBasic.
+                              FileIO.TextFieldParser(filePath)
+
+                MyReader.TextFieldType = FileIO.FieldType.Delimited
+                MyReader.SetDelimiters(",")
+
+                Dim fieldNumber As Integer = 0
+                Dim currentField As String
+                Dim currentRow As String()
+                Dim lastName As String = ""
+                Dim firstName As String = ""
+                Dim UGAID As Integer = -1
+                Dim hours As Integer = -1
+                Dim email As String = ""
+
+                While Not MyReader.EndOfData
+                    Try
+                        currentRow = MyReader.ReadFields()
+
+                        For Each currentField In currentRow
+                            Select Case fieldNumber
+                                Case 1
+                                    lastName = currentField
+                                Case 2
+                                    firstName = currentField
+                                Case 3
+                                    UGAID = CInt(currentField)
+                                Case 4
+                                    hours = CInt(currentField)
+                                Case 5
+                                    email = currentField
+                                Case Else
+                                    MsgBox("The CSV file has incorrect input.")
+                            End Select
+
+                            fieldNumber += 1
+                        Next
+                    Catch ex As Microsoft.VisualBasic.FileIO.MalformedLineException
+                        MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
+                    End Try
+
+                    If (fieldNumber > 5) Then
+                        studentList.Add(New Student(lastName, firstName, UGAID, hours, email, tryToFlag))
+                    Else
+                        MsgBox("The CSV file has incorrect input")
+                    End If
+
+                    fieldNumber = 0
+                End While
+            End Using
+        Catch ex As Exception
+            MsgBox("Could not read from " & filePath & ".")
+        End Try
+    End Sub
 End Class

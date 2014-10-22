@@ -20,7 +20,7 @@
         email = eemail
         timeToComplete = -1
 
-        If (tryToFlag And hhours > 30) Then
+        If (tryToFlag And hhours >= 30) Then
             isFlagged = True
         Else
             isFlagged = False
@@ -85,7 +85,7 @@
     'Tries to flag the account
     'If the course isn't completed and hours are above 30, then flag is turns to true.
     Public Sub tryToFlag()
-        If Not isComplete & hours > 30 Then
+        If Not isComplete & hours >= 30 Then
             isFlagged = True
         End If
     End Sub
