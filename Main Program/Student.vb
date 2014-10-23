@@ -74,6 +74,11 @@
         isFlagged = False
     End Sub
 
+    'Sets the completion to false.
+    Public Sub setIncomplete()
+        isComplete = False
+    End Sub
+
     Public Sub forceUnflag()
         isFlagged = False
     End Sub

@@ -23,6 +23,7 @@
         studentList.Remove(New Student(last, first, id, hours, email, tryToFlag))
     End Sub
 
+    'Removes the first occurence an object matching the "Student" passed in exactly.
     Public Sub removeStudent(ByVal student As Student)
         studentList.Remove(student)
     End Sub
@@ -58,6 +59,11 @@
     'Flags the first Student matching the passed in student.
     Public Sub completeStudent(ByVal student As Student)
         studentList.Find(Function(e) e.Equals(student)).setComplete()
+    End Sub
+
+    'Flags the first Student matching the passed in student.
+    Public Sub incompleteStudent(ByVal student As Student)
+        studentList.Find(Function(e) e.Equals(student)).setIncomplete()
     End Sub
 
     'Returns a new StudentList sorted as requested.
