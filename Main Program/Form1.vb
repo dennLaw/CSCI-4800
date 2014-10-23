@@ -74,6 +74,42 @@
 
     End Sub
 
+    Public Sub createGraph()
+
+        Dim studentList = New List(Of Student)
+
+        Dim flaggedCount = studentList.getFlagged().getCount()
+        Dim studentCount = studentList.getCount()
+
+        Dim objRandom As New Random
+
+
+        With Me.Chart1
+            Me.ResetChart()
+
+            'Create a new series
+            With .Series.Add("Flagged vs Non-Flagged")
+                'change the default type (column) to Pie
+                .ChartType = DataVisualization.Charting.SeriesChartType.Pie
+
+                Dim flagged As String
+                Dim nonFlagged As String
+
+                .Points.AddXY(flagged, flaggedCount)
+                .Points.AddXY(nonFlagged, (studentCount - flaggedCount))
+
+                .IsVisibleInLegend = False
+                .Label = "#VALX\n#PERCENT"
+            End With
+
+            'force labels to appear outside the pie
+            .Series("Students")("PieLabelStyle") = "Outside"
+
+            'set the pie to be in 3D
+            .ChartAreas(0).Area3DStyle.Enable3D = True
+        End With
+    End Sub
+
     Public Sub ImportStudents()
         Dim completed As String
         Dim flagged As String
