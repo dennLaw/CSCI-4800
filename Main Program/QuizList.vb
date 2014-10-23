@@ -33,4 +33,10 @@
     Public Function getCount() As Integer
         Return quizList.Count
     End Function
+
+    'Simple boolean to substitute an if statement.
+    ' "If student score is more than pass, then return true. Otherwise, false."
+    Public Function getPassed(ByVal score As Integer, ByVal pass As Integer) As Boolean
+        Return score >= pass
+    End Function
 End Class

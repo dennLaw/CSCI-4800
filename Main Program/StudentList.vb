@@ -25,8 +25,26 @@
     End Sub
 
     'Removes the first occurence of an object matching the "Student" passed in exactly.
+    Public Sub removeStudent(ByVal last As String, ByVal first As String, ByVal id As Integer, ByVal hours As Integer, ByVal email As String, ByVal tryToFlag As Boolean)
+        studentList.Remove(New Student(last, first, id, hours, email, tryToFlag))
+    End Sub
+
     Public Sub removeStudent(ByVal student As Student)
         studentList.Remove(student)
+    End Sub
+
+    'Removes the first occurence of an object's ID matching the ID passed in.
+    Public Sub removeStudentByID(ByVal ID As Integer)
+        Dim temp = New StudentList()
+
+        temp =
+                From currentStudent In studentList
+                Let search = currentStudent.getFlagged()
+                Where CStr(currentStudent.getID()).IndexOf(CStr(ID)) <> -1
+                Order By search Ascending
+                Select currentStudent
+
+        studentList.Remove(New StudentList(temp).getIndex(0))
     End Sub
 
     'Attempts to flag the first Student matching the passed in student.
@@ -178,9 +196,7 @@
                     currentStudent.getLast().IndexOf(searchFor) <> -1 Or
                     CStr(currentStudent.getID()).IndexOf(searchFor) <> -1 Or
                     CStr(currentStudent.getHours()).IndexOf(searchFor) <> -1 Or
-                    currentStudent.getEmail().IndexOf(searchFor) <> -1 Or
-                    CStr(currentStudent.getComplete()).IndexOf(searchFor) <> -1 Or
-                    CStr(currentStudent.getFlagged()).IndexOf(searchFor) <> -1
+                    currentStudent.getEmail().IndexOf(searchFor) <> -1
                 Order By search Ascending
                 Select currentStudent
 
