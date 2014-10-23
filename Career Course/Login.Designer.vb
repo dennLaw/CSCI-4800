@@ -24,8 +24,8 @@ Partial Class Login
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.idName = New System.Windows.Forms.TextBox()
+        Me.PassField = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -35,27 +35,27 @@ Partial Class Login
         Me.Button1.Location = New System.Drawing.Point(344, 309)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
+        Me.Button1.TabIndex = 3
         Me.Button1.Text = "Log In"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'idName
         '
-        Me.TextBox1.ForeColor = System.Drawing.Color.Black
-        Me.TextBox1.Location = New System.Drawing.Point(312, 283)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox1.Size = New System.Drawing.Size(155, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.idName.ForeColor = System.Drawing.Color.Black
+        Me.idName.Location = New System.Drawing.Point(312, 255)
+        Me.idName.Name = "idName"
+        Me.idName.Size = New System.Drawing.Size(155, 20)
+        Me.idName.TabIndex = 0
         '
-        'TextBox2
+        'PassField
         '
-        Me.TextBox2.AcceptsReturn = True
-        Me.TextBox2.ForeColor = System.Drawing.Color.Black
-        Me.TextBox2.Location = New System.Drawing.Point(312, 257)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(155, 20)
-        Me.TextBox2.TabIndex = 3
+        Me.PassField.AcceptsReturn = True
+        Me.PassField.ForeColor = System.Drawing.Color.Black
+        Me.PassField.Location = New System.Drawing.Point(312, 281)
+        Me.PassField.Name = "PassField"
+        Me.PassField.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PassField.Size = New System.Drawing.Size(155, 20)
+        Me.PassField.TabIndex = 1
         '
         'Label1
         '
@@ -88,8 +88,8 @@ Partial Class Login
         Me.ClientSize = New System.Drawing.Size(764, 459)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.PassField)
+        Me.Controls.Add(Me.idName)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Login"
         Me.Text = "Login"
@@ -98,8 +98,8 @@ Partial Class Login
 
     End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents idName As System.Windows.Forms.TextBox
+    Friend WithEvents PassField As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class
