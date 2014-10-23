@@ -318,7 +318,7 @@
                 MyReader.TextFieldType = FileIO.FieldType.Delimited
                 MyReader.SetDelimiters(",")
 
-                Dim fieldNumber As Integer = 0
+                Dim fieldNumber As Integer = 1
                 Dim currentField As String
                 Dim currentRow As String()
                 Dim lastName As String = ""
@@ -374,7 +374,7 @@
                         MsgBox("The CSV file has incorrect input")
                     End If
 
-                    fieldNumber = 0
+                    fieldNumber = 1
                 End While
             End Using
         Catch ex As Exception
