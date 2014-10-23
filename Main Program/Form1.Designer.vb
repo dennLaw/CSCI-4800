@@ -30,10 +30,19 @@ Partial Class Form1
         Me.DeleteBtn = New System.Windows.Forms.Button()
         Me.AddBtn = New System.Windows.Forms.Button()
         Me.DG = New System.Windows.Forms.DataGridView()
+        Me.Selected = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.LastCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FirstCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.hours = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmailCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FlaggedCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FilterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ShowAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShowCompletedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShowIncompletedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShowFlaggedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,12 +51,9 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataSet1 = New System.Data.DataSet()
         Me.DataTable1 = New System.Data.DataTable()
-        Me.LastCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FirstCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IDCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmailCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StatusCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FlaggedCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImportBtn = New System.Windows.Forms.Button()
+        Me.OpenFile = New System.Windows.Forms.OpenFileDialog()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Panel1.SuspendLayout()
         CType(Me.DG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -65,14 +71,14 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.DeleteBtn)
         Me.Panel1.Controls.Add(Me.AddBtn)
         Me.Panel1.Controls.Add(Me.DG)
-        Me.Panel1.Location = New System.Drawing.Point(107, 112)
+        Me.Panel1.Location = New System.Drawing.Point(53, 112)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(705, 443)
+        Me.Panel1.Size = New System.Drawing.Size(830, 443)
         Me.Panel1.TabIndex = 6
         '
         'ClrCmpBtn
         '
-        Me.ClrCmpBtn.Location = New System.Drawing.Point(614, 389)
+        Me.ClrCmpBtn.Location = New System.Drawing.Point(727, 389)
         Me.ClrCmpBtn.Name = "ClrCmpBtn"
         Me.ClrCmpBtn.Size = New System.Drawing.Size(75, 42)
         Me.ClrCmpBtn.TabIndex = 5
@@ -81,7 +87,7 @@ Partial Class Form1
         '
         'ClearBtn
         '
-        Me.ClearBtn.Location = New System.Drawing.Point(533, 389)
+        Me.ClearBtn.Location = New System.Drawing.Point(646, 389)
         Me.ClearBtn.Name = "ClearBtn"
         Me.ClearBtn.Size = New System.Drawing.Size(75, 42)
         Me.ClearBtn.TabIndex = 4
@@ -90,7 +96,7 @@ Partial Class Form1
         '
         'EmailBtn
         '
-        Me.EmailBtn.Location = New System.Drawing.Point(452, 389)
+        Me.EmailBtn.Location = New System.Drawing.Point(565, 389)
         Me.EmailBtn.Name = "EmailBtn"
         Me.EmailBtn.Size = New System.Drawing.Size(75, 42)
         Me.EmailBtn.TabIndex = 3
@@ -117,28 +123,78 @@ Partial Class Form1
         '
         'DG
         '
-        Me.DG.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.LastCl, Me.FirstCl, Me.IDCl, Me.EmailCl, Me.StatusCl, Me.FlaggedCl})
+        Me.DG.AllowUserToResizeColumns = False
+        Me.DG.AllowUserToResizeRows = False
+        Me.DG.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Selected, Me.LastCl, Me.FirstCl, Me.IDCl, Me.hours, Me.EmailCl, Me.StatusCl, Me.FlaggedCl})
         Me.DG.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DG.Location = New System.Drawing.Point(13, 32)
         Me.DG.Name = "DG"
-        Me.DG.Size = New System.Drawing.Size(676, 350)
+        Me.DG.Size = New System.Drawing.Size(789, 350)
         Me.DG.TabIndex = 0
+        '
+        'Selected
+        '
+        Me.Selected.FillWeight = 50.0!
+        Me.Selected.HeaderText = ""
+        Me.Selected.Name = "Selected"
+        Me.Selected.Width = 50
+        '
+        'LastCl
+        '
+        Me.LastCl.HeaderText = "Last"
+        Me.LastCl.Name = "LastCl"
+        Me.LastCl.ReadOnly = True
+        '
+        'FirstCl
+        '
+        Me.FirstCl.HeaderText = "First"
+        Me.FirstCl.Name = "FirstCl"
+        Me.FirstCl.ReadOnly = True
+        '
+        'IDCl
+        '
+        Me.IDCl.HeaderText = "MyID"
+        Me.IDCl.Name = "IDCl"
+        Me.IDCl.ReadOnly = True
+        '
+        'hours
+        '
+        Me.hours.HeaderText = "Hours"
+        Me.hours.Name = "hours"
+        '
+        'EmailCl
+        '
+        Me.EmailCl.HeaderText = "Email"
+        Me.EmailCl.Name = "EmailCl"
+        Me.EmailCl.ReadOnly = True
+        '
+        'StatusCl
+        '
+        Me.StatusCl.HeaderText = "Status"
+        Me.StatusCl.Name = "StatusCl"
+        Me.StatusCl.ReadOnly = True
+        '
+        'FlaggedCl
+        '
+        Me.FlaggedCl.HeaderText = "Flagged"
+        Me.FlaggedCl.Name = "FlaggedCl"
+        Me.FlaggedCl.ReadOnly = True
         '
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.MenuStrip1)
-        Me.Panel2.Location = New System.Drawing.Point(107, 46)
+        Me.Panel2.Location = New System.Drawing.Point(53, 46)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(705, 60)
+        Me.Panel2.Size = New System.Drawing.Size(830, 60)
         Me.Panel2.TabIndex = 7
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Cambria", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(262, 14)
+        Me.Label1.Location = New System.Drawing.Point(304, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(198, 32)
         Me.Label1.TabIndex = 0
@@ -151,18 +207,24 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FilterToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(703, 46)
+        Me.MenuStrip1.Size = New System.Drawing.Size(828, 46)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FilterToolStripMenuItem
         '
         Me.FilterToolStripMenuItem.AutoSize = False
-        Me.FilterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowCompletedToolStripMenuItem, Me.ShowIncompletedToolStripMenuItem, Me.ShowFlaggedToolStripMenuItem, Me.ShowUnflaggedToolStripMenuItem, Me.ShowLessThan30HrsToolStripMenuItem})
+        Me.FilterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowAllToolStripMenuItem, Me.ShowCompletedToolStripMenuItem, Me.ShowIncompletedToolStripMenuItem, Me.ShowFlaggedToolStripMenuItem, Me.ShowUnflaggedToolStripMenuItem, Me.ShowLessThan30HrsToolStripMenuItem})
         Me.FilterToolStripMenuItem.Font = New System.Drawing.Font("Georgia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FilterToolStripMenuItem.Name = "FilterToolStripMenuItem"
         Me.FilterToolStripMenuItem.Size = New System.Drawing.Size(94, 27)
         Me.FilterToolStripMenuItem.Text = "Filter"
+        '
+        'ShowAllToolStripMenuItem
+        '
+        Me.ShowAllToolStripMenuItem.Name = "ShowAllToolStripMenuItem"
+        Me.ShowAllToolStripMenuItem.Size = New System.Drawing.Size(314, 28)
+        Me.ShowAllToolStripMenuItem.Text = "Show All"
         '
         'ShowCompletedToolStripMenuItem
         '
@@ -197,7 +259,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.Image = CType(resources.GetObject("Label2.Image"), System.Drawing.Image)
-        Me.Label2.Location = New System.Drawing.Point(818, 112)
+        Me.Label2.Location = New System.Drawing.Point(889, 112)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 38)
         Me.Label2.TabIndex = 2
@@ -211,41 +273,18 @@ Partial Class Form1
         '
         Me.DataTable1.TableName = "Table1"
         '
-        'LastCl
+        'ImportBtn
         '
-        Me.LastCl.HeaderText = "Last"
-        Me.LastCl.Name = "LastCl"
-        Me.LastCl.ReadOnly = True
+        Me.ImportBtn.Location = New System.Drawing.Point(808, 12)
+        Me.ImportBtn.Name = "ImportBtn"
+        Me.ImportBtn.Size = New System.Drawing.Size(75, 23)
+        Me.ImportBtn.TabIndex = 2
+        Me.ImportBtn.Text = "Import"
+        Me.ImportBtn.UseVisualStyleBackColor = True
         '
-        'FirstCl
+        'OpenFileDialog1
         '
-        Me.FirstCl.HeaderText = "First"
-        Me.FirstCl.Name = "FirstCl"
-        Me.FirstCl.ReadOnly = True
-        '
-        'IDCl
-        '
-        Me.IDCl.HeaderText = "MyID"
-        Me.IDCl.Name = "IDCl"
-        Me.IDCl.ReadOnly = True
-        '
-        'EmailCl
-        '
-        Me.EmailCl.HeaderText = "Email"
-        Me.EmailCl.Name = "EmailCl"
-        Me.EmailCl.ReadOnly = True
-        '
-        'StatusCl
-        '
-        Me.StatusCl.HeaderText = "Status"
-        Me.StatusCl.Name = "StatusCl"
-        Me.StatusCl.ReadOnly = True
-        '
-        'FlaggedCl
-        '
-        Me.FlaggedCl.HeaderText = "Flagged"
-        Me.FlaggedCl.Name = "FlaggedCl"
-        Me.FlaggedCl.ReadOnly = True
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'Form1
         '
@@ -253,6 +292,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(999, 649)
+        Me.Controls.Add(Me.ImportBtn)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -289,11 +329,17 @@ Partial Class Form1
     Friend WithEvents DG As System.Windows.Forms.DataGridView
     Friend WithEvents DataSet1 As System.Data.DataSet
     Friend WithEvents DataTable1 As System.Data.DataTable
+    Friend WithEvents Selected As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents LastCl As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FirstCl As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IDCl As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents hours As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents EmailCl As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents StatusCl As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FlaggedCl As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ImportBtn As System.Windows.Forms.Button
+    Friend WithEvents OpenFile As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents ShowAllToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 
 End Class

@@ -30,12 +30,56 @@
 
     Private Sub AddBtn_Click(sender As Object, e As EventArgs) Handles AddBtn.Click
         Dim form2 = New Form2()
-        form2.Show()
+        form2.ShowDialog()
 
-        ' Dim student = New Student(Form2.LastBx.Text, Form2.FirstBx.Text, CInt(Form2.IDBx.Text), CInt(Form2.HoursBx.Text), Form2.EmailBx.Text, False) 'implement tryToFlag Later
+
+
+        'DG.Rows.Add(True, (form2.LastBx.Text), (form2.FirstBx.Text), CInt(form2.IDBx.Text), CInt(form2.HoursBx.Text), (form2.EmailBx.Text), "Incomplete", "Yes")
+
+
+        'Dim student = New Student(form2.LastBx.Text, form2.FirstBx.Text, CInt(form2.IDBx.Text), CInt(form2.HoursBx.Text), form2.EmailBx.Text, False) 'implement tryToFlag Later
     End Sub
 
+    'Dim student = New Student(Form2.LastBx.Text, Form2.FirstBx.Text, CInt(Form2.IDBx.Text), CInt(Form2.HoursBx.Text), Form2.EmailBx.Text, False) 'implement tryToFlag Later
 
 
+
+    Private Sub ImportBtn_Click(sender As Object, e As EventArgs) Handles ImportBtn.Click
+        OpenFileDialog1.Title = "Please Select a File"
+
+
+        OpenFileDialog1.InitialDirectory = "C:temp"
+
+
+        OpenFileDialog1.ShowDialog()
+
+
+    End Sub
+
+    Private Sub OpenFileDialog1_FileOk(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
+
+
+        Dim strm As System.IO.Stream
+        strm = OpenFileDialog1.OpenFile()
+
+        list.readCSV(OpenFileDialog1.FileName.ToString(), True)
+        ImportStudents()
+
+        If Not (strm Is Nothing) Then
+            'insert code to read the file data
+
+            strm.Close()
+
+        End If
+
+    End Sub
+
+    Public Sub ImportStudents()
+        For i As Integer = 0 To list.getCount() - 1
+            DG.Rows.Add(True, list.getIndex(i).getLast(), list.getIndex(i).getFirst(), list.getIndex(i).getID(), list.getIndex(i).getHours(), list.getIndex(i).getEmail(), "Incomplete", "Yes")
+
+        Next
+    End Sub
+    Dim list = New StudentList()
 
 End Class
