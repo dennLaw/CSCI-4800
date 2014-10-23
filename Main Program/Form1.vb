@@ -96,7 +96,7 @@
 
 
     Private Sub DeleteBtn_Click(sender As Object, e As EventArgs) Handles DeleteBtn.Click
-        For i As Integer = 0 To DG.Rows.Count()
+        For i As Integer = 0 To DG.Rows.Count() - 1
             If DG.Rows(i).Cells(0).Value = True Then
 
             End If
@@ -104,6 +104,12 @@
     End Sub
 
     Private Sub DG_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DG.CellContentClick
-
+        For i As Integer = 0 To DG.Rows.Count() - 1
+            If DG.Rows(i).Cells(0).Value = True Then
+                Selected = False
+            Else
+                Selected = True
+            End If
+        Next
     End Sub
 End Class

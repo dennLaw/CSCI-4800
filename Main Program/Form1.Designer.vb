@@ -251,41 +251,48 @@ Partial Class Form1
         Me.LastCl.HeaderText = "Last"
         Me.LastCl.Name = "LastCl"
         Me.LastCl.ReadOnly = True
+        Me.LastCl.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'FirstCl
         '
         Me.FirstCl.HeaderText = "First"
         Me.FirstCl.Name = "FirstCl"
         Me.FirstCl.ReadOnly = True
+        Me.FirstCl.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'IDCl
         '
         Me.IDCl.HeaderText = "MyID"
         Me.IDCl.Name = "IDCl"
         Me.IDCl.ReadOnly = True
+        Me.IDCl.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'hours
         '
         Me.hours.HeaderText = "Hours"
         Me.hours.Name = "hours"
+        Me.hours.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'EmailCl
         '
         Me.EmailCl.HeaderText = "Email"
         Me.EmailCl.Name = "EmailCl"
         Me.EmailCl.ReadOnly = True
+        Me.EmailCl.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'StatusCl
         '
         Me.StatusCl.HeaderText = "Status"
         Me.StatusCl.Name = "StatusCl"
         Me.StatusCl.ReadOnly = True
+        Me.StatusCl.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'FlaggedCl
         '
         Me.FlaggedCl.HeaderText = "Flagged"
         Me.FlaggedCl.Name = "FlaggedCl"
         Me.FlaggedCl.ReadOnly = True
+        Me.FlaggedCl.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'Form1
         '
