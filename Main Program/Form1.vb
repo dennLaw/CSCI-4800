@@ -80,8 +80,10 @@
 
         Dim flaggedCount = studentList.getFlagged().getCount()
         Dim studentCount = studentList.getCount()
+        Dim nonFlaggedCount = studentList.getNonFlagged().getCount()
+        Dim completeCount = studentList.getComplete().getCount()
+        Dim incompleteCount = studentList.getIncomplete().getCount()
 
-        Dim objRandom As New Random
 
 
         With Me.Chart1
@@ -96,7 +98,32 @@
                 Dim nonFlagged As String
 
                 .Points.AddXY(flagged, flaggedCount)
-                .Points.AddXY(nonFlagged, (studentCount - flaggedCount))
+                .Points.AddXY(nonFlagged, nonFlaggedCount)
+
+                .IsVisibleInLegend = False
+                .Label = "#VALX\n#PERCENT"
+            End With
+
+            'force labels to appear outside the pie
+            .Series("Students")("PieLabelStyle") = "Outside"
+
+            'set the pie to be in 3D
+            .ChartAreas(0).Area3DStyle.Enable3D = True
+        End With
+
+        With Me.Chart2
+            Me.ResetChart()
+
+            'Create a new series
+            With .Series.Add("Complete vs Incomplete")
+                'change the default type (column) to Pie
+                .ChartType = DataVisualization.Charting.SeriesChartType.Pie
+
+                Dim complete As String
+                Dim incomplete As String
+
+                .Points.AddXY(complete, completeCount)
+                .Points.AddXY(incomplete, incompleteCount)
 
                 .IsVisibleInLegend = False
                 .Label = "#VALX\n#PERCENT"
