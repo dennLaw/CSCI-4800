@@ -75,16 +75,20 @@
     End Sub
 
     Public Sub ImportStudents()
-        Dim completed As String = "Incomplete"
-        Dim flagged As String = "Yes"
+        Dim completed As String
+        Dim flagged As String
 
         For i As Integer = 0 To list.getCount() - 1
 
             If (list.getIndex(i).getComplete()) Then
                 completed = "Complete"                  'Conditional to output if student is complete
+            Else
+                completed = "Incomplete"
             End If
             If (Not list.getIndex(i).getFlagged()) Then 'Conditional to output of student is flagged
                 flagged = "No"
+            Else
+                flagged = "Yes"
             End If
 
             DG.Rows.Add(False, list.getIndex(i).getLast(), list.getIndex(i).getFirst(), list.getIndex(i).getID(), list.getIndex(i).getHours(), list.getIndex(i).getEmail(), completed, flagged)
@@ -106,9 +110,9 @@
     Private Sub DG_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DG.CellContentClick
         For i As Integer = 0 To DG.Rows.Count() - 1
             If DG.Rows(i).Cells(0).Value = True Then
-                Selected = False
+                'Selected = False
             Else
-                Selected = True
+                'Selected = True
             End If
         Next
     End Sub
