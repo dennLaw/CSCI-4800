@@ -75,11 +75,35 @@
     End Sub
 
     Public Sub ImportStudents()
+        Dim completed As String = "Incomplete"
+        Dim flagged As String = "Yes"
+
         For i As Integer = 0 To list.getCount() - 1
-            DG.Rows.Add(True, list.getIndex(i).getLast(), list.getIndex(i).getFirst(), list.getIndex(i).getID(), list.getIndex(i).getHours(), list.getIndex(i).getEmail(), "Incomplete", "Yes")
+
+            If (list.getIndex(i).getComplete()) Then
+                completed = "Complete"                  'Conditional to output if student is complete
+            End If
+            If (Not list.getIndex(i).getFlagged()) Then 'Conditional to output of student is flagged
+                flagged = "No"
+            End If
+
+            DG.Rows.Add(False, list.getIndex(i).getLast(), list.getIndex(i).getFirst(), list.getIndex(i).getID(), list.getIndex(i).getHours(), list.getIndex(i).getEmail(), completed, flagged)
 
         Next
     End Sub
     Dim list = New StudentList()
 
+
+
+    Private Sub DeleteBtn_Click(sender As Object, e As EventArgs) Handles DeleteBtn.Click
+        For i As Integer = 0 To DG.Rows.Count()
+            If DG.Rows(i).Cells(0).Value = True Then
+
+            End If
+        Next
+    End Sub
+
+    Private Sub DG_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DG.CellContentClick
+
+    End Sub
 End Class

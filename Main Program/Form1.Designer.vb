@@ -30,14 +30,6 @@ Partial Class Form1
         Me.DeleteBtn = New System.Windows.Forms.Button()
         Me.AddBtn = New System.Windows.Forms.Button()
         Me.DG = New System.Windows.Forms.DataGridView()
-        Me.Selected = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.LastCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FirstCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IDCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.hours = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmailCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StatusCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FlaggedCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -54,6 +46,14 @@ Partial Class Form1
         Me.ImportBtn = New System.Windows.Forms.Button()
         Me.OpenFile = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Selected = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.LastCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FirstCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.hours = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmailCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FlaggedCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -131,54 +131,6 @@ Partial Class Form1
         Me.DG.Name = "DG"
         Me.DG.Size = New System.Drawing.Size(789, 350)
         Me.DG.TabIndex = 0
-        '
-        'Selected
-        '
-        Me.Selected.FillWeight = 50.0!
-        Me.Selected.HeaderText = ""
-        Me.Selected.Name = "Selected"
-        Me.Selected.Width = 50
-        '
-        'LastCl
-        '
-        Me.LastCl.HeaderText = "Last"
-        Me.LastCl.Name = "LastCl"
-        Me.LastCl.ReadOnly = True
-        '
-        'FirstCl
-        '
-        Me.FirstCl.HeaderText = "First"
-        Me.FirstCl.Name = "FirstCl"
-        Me.FirstCl.ReadOnly = True
-        '
-        'IDCl
-        '
-        Me.IDCl.HeaderText = "MyID"
-        Me.IDCl.Name = "IDCl"
-        Me.IDCl.ReadOnly = True
-        '
-        'hours
-        '
-        Me.hours.HeaderText = "Hours"
-        Me.hours.Name = "hours"
-        '
-        'EmailCl
-        '
-        Me.EmailCl.HeaderText = "Email"
-        Me.EmailCl.Name = "EmailCl"
-        Me.EmailCl.ReadOnly = True
-        '
-        'StatusCl
-        '
-        Me.StatusCl.HeaderText = "Status"
-        Me.StatusCl.Name = "StatusCl"
-        Me.StatusCl.ReadOnly = True
-        '
-        'FlaggedCl
-        '
-        Me.FlaggedCl.HeaderText = "Flagged"
-        Me.FlaggedCl.Name = "FlaggedCl"
-        Me.FlaggedCl.ReadOnly = True
         '
         'Panel2
         '
@@ -286,6 +238,55 @@ Partial Class Form1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'Selected
+        '
+        Me.Selected.FillWeight = 50.0!
+        Me.Selected.HeaderText = ""
+        Me.Selected.Name = "Selected"
+        Me.Selected.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Selected.Width = 50
+        '
+        'LastCl
+        '
+        Me.LastCl.HeaderText = "Last"
+        Me.LastCl.Name = "LastCl"
+        Me.LastCl.ReadOnly = True
+        '
+        'FirstCl
+        '
+        Me.FirstCl.HeaderText = "First"
+        Me.FirstCl.Name = "FirstCl"
+        Me.FirstCl.ReadOnly = True
+        '
+        'IDCl
+        '
+        Me.IDCl.HeaderText = "MyID"
+        Me.IDCl.Name = "IDCl"
+        Me.IDCl.ReadOnly = True
+        '
+        'hours
+        '
+        Me.hours.HeaderText = "Hours"
+        Me.hours.Name = "hours"
+        '
+        'EmailCl
+        '
+        Me.EmailCl.HeaderText = "Email"
+        Me.EmailCl.Name = "EmailCl"
+        Me.EmailCl.ReadOnly = True
+        '
+        'StatusCl
+        '
+        Me.StatusCl.HeaderText = "Status"
+        Me.StatusCl.Name = "StatusCl"
+        Me.StatusCl.ReadOnly = True
+        '
+        'FlaggedCl
+        '
+        Me.FlaggedCl.HeaderText = "Flagged"
+        Me.FlaggedCl.Name = "FlaggedCl"
+        Me.FlaggedCl.ReadOnly = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -329,6 +330,10 @@ Partial Class Form1
     Friend WithEvents DG As System.Windows.Forms.DataGridView
     Friend WithEvents DataSet1 As System.Data.DataSet
     Friend WithEvents DataTable1 As System.Data.DataTable
+    Friend WithEvents ImportBtn As System.Windows.Forms.Button
+    Friend WithEvents OpenFile As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents ShowAllToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents Selected As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents LastCl As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FirstCl As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -337,9 +342,5 @@ Partial Class Form1
     Friend WithEvents EmailCl As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents StatusCl As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FlaggedCl As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ImportBtn As System.Windows.Forms.Button
-    Friend WithEvents OpenFile As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents ShowAllToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 
 End Class
