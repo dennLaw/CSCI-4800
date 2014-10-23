@@ -308,6 +308,7 @@
     'Takes in filePath as the CSV to read in.
     'Takes tryToFlag to pass into the new students.
     'Assumes the CSV is completely correct.
+    'Adds onto the existing list. Does NOT return a new StudentList.
     Public Sub readCSV(ByVal filePath As String, ByVal tryToFlag As Boolean)
 
         Try
@@ -325,6 +326,8 @@
                 Dim UGAID As Integer = -1
                 Dim hours As Integer = -1
                 Dim email As String = ""
+                Dim flag As Boolean = False
+                Dim complete As Boolean = False
 
                 While Not MyReader.EndOfData
                     Try
@@ -342,6 +345,10 @@
                                     hours = CInt(currentField)
                                 Case 5
                                     email = currentField
+                                Case 6
+                                    flag = CBool(currentField)
+                                Case 7
+                                    complete = CBool(currentField)
                                 Case Else
                                     MsgBox("The CSV file has incorrect input.")
                             End Select
@@ -354,6 +361,15 @@
 
                     If (fieldNumber > 5) Then
                         studentList.Add(New Student(lastName, firstName, UGAID, hours, email, tryToFlag))
+
+                        If (complete) Then
+                            studentList(studentList.Count - 1).setComplete()
+                        End If
+
+                        If (flag) Then
+                            studentList(studentList.Count - 1).forceFlag()
+                        End If
+
                     Else
                         MsgBox("The CSV file has incorrect input")
                     End If
@@ -364,5 +380,26 @@
         Catch ex As Exception
             MsgBox("Could not read from " & filePath & ".")
         End Try
+    End Sub
+
+    Public Sub writeCSV(ByVal fileName As String)
+
+        If (studentList.Count > 0) Then
+            Try
+                My.Computer.FileSystem.WriteAllText(fileName, studentList(0).getLast() & "," & studentList(0).getFirst() & "," & studentList(0).getID() & "," & studentList(0).getHours() & "," & studentList(0).getEmail() & studentList(0).getFlagged() & "," & studentList(0).getComplete() & vbCrLf, False)
+            Catch ex As Exception
+
+            End Try
+
+            If(studentList.Count > 1)
+            For i As Integer = 1 To studentList.Count
+                Try
+                        My.Computer.FileSystem.WriteAllText(fileName, studentList(i).getLast() & "," & studentList(i).getFirst() & "," & studentList(i).getID() & "," & studentList(i).getHours() & "," & studentList(i).getEmail() & studentList(i).getFlagged() & "," & studentList(i).getComplete() & vbCrLf, True)
+                Catch ex As Exception
+
+                End Try
+                Next
+            End If
+        End If
     End Sub
 End Class
