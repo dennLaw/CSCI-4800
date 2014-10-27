@@ -193,7 +193,7 @@ Partial Class Login
         '
         'Panel3
         '
-        Me.Panel3.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.Slide3
+        Me.Panel3.BackgroundImage = CType(resources.GetObject("Panel3.BackgroundImage"), System.Drawing.Image)
         Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel3.Controls.Add(Me.Button4)
         Me.Panel3.Controls.Add(Me.Button3)
@@ -205,7 +205,7 @@ Partial Class Login
         'Button4
         '
         Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
         Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -218,7 +218,7 @@ Partial Class Login
         'Button3
         '
         Me.Button3.BackColor = System.Drawing.Color.Transparent
-        Me.Button3.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
         Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -242,7 +242,7 @@ Partial Class Login
         'Button6
         '
         Me.Button6.BackColor = System.Drawing.Color.Transparent
-        Me.Button6.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button6.BackgroundImage = CType(resources.GetObject("Button6.BackgroundImage"), System.Drawing.Image)
         Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button6.FlatAppearance.BorderSize = 0
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -255,7 +255,7 @@ Partial Class Login
         'Button5
         '
         Me.Button5.BackColor = System.Drawing.Color.Transparent
-        Me.Button5.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back
+        Me.Button5.BackgroundImage = CType(resources.GetObject("Button5.BackgroundImage"), System.Drawing.Image)
         Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button5.FlatAppearance.BorderSize = 0
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -279,7 +279,7 @@ Partial Class Login
         'Button8
         '
         Me.Button8.BackColor = System.Drawing.Color.Transparent
-        Me.Button8.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button8.BackgroundImage = CType(resources.GetObject("Button8.BackgroundImage"), System.Drawing.Image)
         Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button8.FlatAppearance.BorderSize = 0
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -292,7 +292,7 @@ Partial Class Login
         'Button7
         '
         Me.Button7.BackColor = System.Drawing.Color.Transparent
-        Me.Button7.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button7.BackgroundImage = CType(resources.GetObject("Button7.BackgroundImage"), System.Drawing.Image)
         Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button7.FlatAppearance.BorderSize = 0
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -316,7 +316,7 @@ Partial Class Login
         'Button10
         '
         Me.Button10.BackColor = System.Drawing.Color.Transparent
-        Me.Button10.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button10.BackgroundImage = CType(resources.GetObject("Button10.BackgroundImage"), System.Drawing.Image)
         Me.Button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button10.FlatAppearance.BorderSize = 0
         Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -329,7 +329,7 @@ Partial Class Login
         'Button9
         '
         Me.Button9.BackColor = System.Drawing.Color.Transparent
-        Me.Button9.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button9.BackgroundImage = CType(resources.GetObject("Button9.BackgroundImage"), System.Drawing.Image)
         Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button9.FlatAppearance.BorderSize = 0
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -353,7 +353,7 @@ Partial Class Login
         'Button12
         '
         Me.Button12.BackColor = System.Drawing.Color.Transparent
-        Me.Button12.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button12.BackgroundImage = CType(resources.GetObject("Button12.BackgroundImage"), System.Drawing.Image)
         Me.Button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button12.FlatAppearance.BorderSize = 0
         Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -366,7 +366,7 @@ Partial Class Login
         'Button11
         '
         Me.Button11.BackColor = System.Drawing.Color.Transparent
-        Me.Button11.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button11.BackgroundImage = CType(resources.GetObject("Button11.BackgroundImage"), System.Drawing.Image)
         Me.Button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button11.FlatAppearance.BorderSize = 0
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -390,7 +390,7 @@ Partial Class Login
         'Button14
         '
         Me.Button14.BackColor = System.Drawing.Color.Transparent
-        Me.Button14.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button14.BackgroundImage = CType(resources.GetObject("Button14.BackgroundImage"), System.Drawing.Image)
         Me.Button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button14.FlatAppearance.BorderSize = 0
         Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -403,7 +403,7 @@ Partial Class Login
         'Button13
         '
         Me.Button13.BackColor = System.Drawing.Color.Transparent
-        Me.Button13.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button13.BackgroundImage = CType(resources.GetObject("Button13.BackgroundImage"), System.Drawing.Image)
         Me.Button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button13.FlatAppearance.BorderSize = 0
         Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -427,7 +427,7 @@ Partial Class Login
         'Button16
         '
         Me.Button16.BackColor = System.Drawing.Color.Transparent
-        Me.Button16.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button16.BackgroundImage = CType(resources.GetObject("Button16.BackgroundImage"), System.Drawing.Image)
         Me.Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button16.FlatAppearance.BorderSize = 0
         Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -440,7 +440,7 @@ Partial Class Login
         'Button15
         '
         Me.Button15.BackColor = System.Drawing.Color.Transparent
-        Me.Button15.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button15.BackgroundImage = CType(resources.GetObject("Button15.BackgroundImage"), System.Drawing.Image)
         Me.Button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button15.FlatAppearance.BorderSize = 0
         Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -464,7 +464,7 @@ Partial Class Login
         'Button18
         '
         Me.Button18.BackColor = System.Drawing.Color.Transparent
-        Me.Button18.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button18.BackgroundImage = CType(resources.GetObject("Button18.BackgroundImage"), System.Drawing.Image)
         Me.Button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button18.FlatAppearance.BorderSize = 0
         Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -477,7 +477,7 @@ Partial Class Login
         'Button17
         '
         Me.Button17.BackColor = System.Drawing.Color.Transparent
-        Me.Button17.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button17.BackgroundImage = CType(resources.GetObject("Button17.BackgroundImage"), System.Drawing.Image)
         Me.Button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button17.FlatAppearance.BorderSize = 0
         Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -501,7 +501,7 @@ Partial Class Login
         'Button20
         '
         Me.Button20.BackColor = System.Drawing.Color.Transparent
-        Me.Button20.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button20.BackgroundImage = CType(resources.GetObject("Button20.BackgroundImage"), System.Drawing.Image)
         Me.Button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button20.FlatAppearance.BorderSize = 0
         Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -514,7 +514,7 @@ Partial Class Login
         'Button19
         '
         Me.Button19.BackColor = System.Drawing.Color.Transparent
-        Me.Button19.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button19.BackgroundImage = CType(resources.GetObject("Button19.BackgroundImage"), System.Drawing.Image)
         Me.Button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button19.FlatAppearance.BorderSize = 0
         Me.Button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -538,7 +538,7 @@ Partial Class Login
         'Button22
         '
         Me.Button22.BackColor = System.Drawing.Color.Transparent
-        Me.Button22.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button22.BackgroundImage = CType(resources.GetObject("Button22.BackgroundImage"), System.Drawing.Image)
         Me.Button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button22.FlatAppearance.BorderSize = 0
         Me.Button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -551,7 +551,7 @@ Partial Class Login
         'Button21
         '
         Me.Button21.BackColor = System.Drawing.Color.Transparent
-        Me.Button21.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button21.BackgroundImage = CType(resources.GetObject("Button21.BackgroundImage"), System.Drawing.Image)
         Me.Button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button21.FlatAppearance.BorderSize = 0
         Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -575,7 +575,7 @@ Partial Class Login
         'Button24
         '
         Me.Button24.BackColor = System.Drawing.Color.Transparent
-        Me.Button24.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button24.BackgroundImage = CType(resources.GetObject("Button24.BackgroundImage"), System.Drawing.Image)
         Me.Button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button24.FlatAppearance.BorderSize = 0
         Me.Button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -588,7 +588,7 @@ Partial Class Login
         'Button23
         '
         Me.Button23.BackColor = System.Drawing.Color.Transparent
-        Me.Button23.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button23.BackgroundImage = CType(resources.GetObject("Button23.BackgroundImage"), System.Drawing.Image)
         Me.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button23.FlatAppearance.BorderSize = 0
         Me.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -612,7 +612,7 @@ Partial Class Login
         'Button26
         '
         Me.Button26.BackColor = System.Drawing.Color.Transparent
-        Me.Button26.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button26.BackgroundImage = CType(resources.GetObject("Button26.BackgroundImage"), System.Drawing.Image)
         Me.Button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button26.FlatAppearance.BorderSize = 0
         Me.Button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -625,7 +625,7 @@ Partial Class Login
         'Button25
         '
         Me.Button25.BackColor = System.Drawing.Color.Transparent
-        Me.Button25.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button25.BackgroundImage = CType(resources.GetObject("Button25.BackgroundImage"), System.Drawing.Image)
         Me.Button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button25.FlatAppearance.BorderSize = 0
         Me.Button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -649,7 +649,7 @@ Partial Class Login
         'Button28
         '
         Me.Button28.BackColor = System.Drawing.Color.Transparent
-        Me.Button28.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button28.BackgroundImage = CType(resources.GetObject("Button28.BackgroundImage"), System.Drawing.Image)
         Me.Button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button28.FlatAppearance.BorderSize = 0
         Me.Button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -662,7 +662,7 @@ Partial Class Login
         'Button27
         '
         Me.Button27.BackColor = System.Drawing.Color.Transparent
-        Me.Button27.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button27.BackgroundImage = CType(resources.GetObject("Button27.BackgroundImage"), System.Drawing.Image)
         Me.Button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button27.FlatAppearance.BorderSize = 0
         Me.Button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -686,7 +686,7 @@ Partial Class Login
         'Button30
         '
         Me.Button30.BackColor = System.Drawing.Color.Transparent
-        Me.Button30.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button30.BackgroundImage = CType(resources.GetObject("Button30.BackgroundImage"), System.Drawing.Image)
         Me.Button30.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button30.FlatAppearance.BorderSize = 0
         Me.Button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -699,7 +699,7 @@ Partial Class Login
         'Button29
         '
         Me.Button29.BackColor = System.Drawing.Color.Transparent
-        Me.Button29.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button29.BackgroundImage = CType(resources.GetObject("Button29.BackgroundImage"), System.Drawing.Image)
         Me.Button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button29.FlatAppearance.BorderSize = 0
         Me.Button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -723,7 +723,7 @@ Partial Class Login
         'Button32
         '
         Me.Button32.BackColor = System.Drawing.Color.Transparent
-        Me.Button32.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button32.BackgroundImage = CType(resources.GetObject("Button32.BackgroundImage"), System.Drawing.Image)
         Me.Button32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button32.FlatAppearance.BorderSize = 0
         Me.Button32.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -736,7 +736,7 @@ Partial Class Login
         'Button31
         '
         Me.Button31.BackColor = System.Drawing.Color.Transparent
-        Me.Button31.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button31.BackgroundImage = CType(resources.GetObject("Button31.BackgroundImage"), System.Drawing.Image)
         Me.Button31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button31.FlatAppearance.BorderSize = 0
         Me.Button31.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -760,7 +760,7 @@ Partial Class Login
         'Button34
         '
         Me.Button34.BackColor = System.Drawing.Color.Transparent
-        Me.Button34.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.forward1
+        Me.Button34.BackgroundImage = CType(resources.GetObject("Button34.BackgroundImage"), System.Drawing.Image)
         Me.Button34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button34.FlatAppearance.BorderSize = 0
         Me.Button34.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -773,7 +773,7 @@ Partial Class Login
         'Button33
         '
         Me.Button33.BackColor = System.Drawing.Color.Transparent
-        Me.Button33.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button33.BackgroundImage = CType(resources.GetObject("Button33.BackgroundImage"), System.Drawing.Image)
         Me.Button33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button33.FlatAppearance.BorderSize = 0
         Me.Button33.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -797,7 +797,7 @@ Partial Class Login
         'Button36
         '
         Me.Button36.BackColor = System.Drawing.Color.Transparent
-        Me.Button36.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.back1
+        Me.Button36.BackgroundImage = CType(resources.GetObject("Button36.BackgroundImage"), System.Drawing.Image)
         Me.Button36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button36.FlatAppearance.BorderSize = 0
         Me.Button36.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -847,7 +847,6 @@ Partial Class Login
         Me.Controls.Add(Me.Panel19)
         Me.Name = "Login"
         Me.Text = "Login"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)

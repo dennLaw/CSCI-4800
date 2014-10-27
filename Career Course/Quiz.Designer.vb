@@ -95,9 +95,9 @@ Partial Class Quiz
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Button20 = New System.Windows.Forms.Button()
         Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Button21 = New System.Windows.Forms.Button()
-        Me.Button22 = New System.Windows.Forms.Button()
         Me.Button23 = New System.Windows.Forms.Button()
+        Me.Button22 = New System.Windows.Forms.Button()
+        Me.Button21 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -129,7 +129,7 @@ Partial Class Quiz
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.NextQuestion
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -197,7 +197,7 @@ Partial Class Quiz
         'Button3
         '
         Me.Button3.BackColor = System.Drawing.Color.Transparent
-        Me.Button3.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.NextQuestion
+        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
         Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -210,7 +210,7 @@ Partial Class Quiz
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.PreviousQuestion
+        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -282,7 +282,7 @@ Partial Class Quiz
         'Button4
         '
         Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.NextQuestion
+        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
         Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -295,7 +295,7 @@ Partial Class Quiz
         'Button5
         '
         Me.Button5.BackColor = System.Drawing.Color.Transparent
-        Me.Button5.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.PreviousQuestion
+        Me.Button5.BackgroundImage = CType(resources.GetObject("Button5.BackgroundImage"), System.Drawing.Image)
         Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button5.FlatAppearance.BorderSize = 0
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -367,7 +367,7 @@ Partial Class Quiz
         'Button6
         '
         Me.Button6.BackColor = System.Drawing.Color.Transparent
-        Me.Button6.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.NextQuestion
+        Me.Button6.BackgroundImage = CType(resources.GetObject("Button6.BackgroundImage"), System.Drawing.Image)
         Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button6.FlatAppearance.BorderSize = 0
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -380,7 +380,7 @@ Partial Class Quiz
         'Button7
         '
         Me.Button7.BackColor = System.Drawing.Color.Transparent
-        Me.Button7.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.PreviousQuestion
+        Me.Button7.BackgroundImage = CType(resources.GetObject("Button7.BackgroundImage"), System.Drawing.Image)
         Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button7.FlatAppearance.BorderSize = 0
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -452,7 +452,7 @@ Partial Class Quiz
         'Button8
         '
         Me.Button8.BackColor = System.Drawing.Color.Transparent
-        Me.Button8.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.NextQuestion
+        Me.Button8.BackgroundImage = CType(resources.GetObject("Button8.BackgroundImage"), System.Drawing.Image)
         Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button8.FlatAppearance.BorderSize = 0
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -465,7 +465,7 @@ Partial Class Quiz
         'Button9
         '
         Me.Button9.BackColor = System.Drawing.Color.Transparent
-        Me.Button9.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.PreviousQuestion
+        Me.Button9.BackgroundImage = CType(resources.GetObject("Button9.BackgroundImage"), System.Drawing.Image)
         Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button9.FlatAppearance.BorderSize = 0
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -537,7 +537,7 @@ Partial Class Quiz
         'Button10
         '
         Me.Button10.BackColor = System.Drawing.Color.Transparent
-        Me.Button10.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.NextQuestion
+        Me.Button10.BackgroundImage = CType(resources.GetObject("Button10.BackgroundImage"), System.Drawing.Image)
         Me.Button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button10.FlatAppearance.BorderSize = 0
         Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -550,7 +550,7 @@ Partial Class Quiz
         'Button11
         '
         Me.Button11.BackColor = System.Drawing.Color.Transparent
-        Me.Button11.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.PreviousQuestion
+        Me.Button11.BackgroundImage = CType(resources.GetObject("Button11.BackgroundImage"), System.Drawing.Image)
         Me.Button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button11.FlatAppearance.BorderSize = 0
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -622,7 +622,7 @@ Partial Class Quiz
         'Button12
         '
         Me.Button12.BackColor = System.Drawing.Color.Transparent
-        Me.Button12.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.NextQuestion
+        Me.Button12.BackgroundImage = CType(resources.GetObject("Button12.BackgroundImage"), System.Drawing.Image)
         Me.Button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button12.FlatAppearance.BorderSize = 0
         Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -635,7 +635,7 @@ Partial Class Quiz
         'Button13
         '
         Me.Button13.BackColor = System.Drawing.Color.Transparent
-        Me.Button13.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.PreviousQuestion
+        Me.Button13.BackgroundImage = CType(resources.GetObject("Button13.BackgroundImage"), System.Drawing.Image)
         Me.Button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button13.FlatAppearance.BorderSize = 0
         Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -707,7 +707,7 @@ Partial Class Quiz
         'Button14
         '
         Me.Button14.BackColor = System.Drawing.Color.Transparent
-        Me.Button14.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.NextQuestion
+        Me.Button14.BackgroundImage = CType(resources.GetObject("Button14.BackgroundImage"), System.Drawing.Image)
         Me.Button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button14.FlatAppearance.BorderSize = 0
         Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -720,7 +720,7 @@ Partial Class Quiz
         'Button15
         '
         Me.Button15.BackColor = System.Drawing.Color.Transparent
-        Me.Button15.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.PreviousQuestion
+        Me.Button15.BackgroundImage = CType(resources.GetObject("Button15.BackgroundImage"), System.Drawing.Image)
         Me.Button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button15.FlatAppearance.BorderSize = 0
         Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -792,7 +792,7 @@ Partial Class Quiz
         'Button16
         '
         Me.Button16.BackColor = System.Drawing.Color.Transparent
-        Me.Button16.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.NextQuestion
+        Me.Button16.BackgroundImage = CType(resources.GetObject("Button16.BackgroundImage"), System.Drawing.Image)
         Me.Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button16.FlatAppearance.BorderSize = 0
         Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -805,7 +805,7 @@ Partial Class Quiz
         'Button17
         '
         Me.Button17.BackColor = System.Drawing.Color.Transparent
-        Me.Button17.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.PreviousQuestion
+        Me.Button17.BackgroundImage = CType(resources.GetObject("Button17.BackgroundImage"), System.Drawing.Image)
         Me.Button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button17.FlatAppearance.BorderSize = 0
         Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -890,7 +890,7 @@ Partial Class Quiz
         'Button19
         '
         Me.Button19.BackColor = System.Drawing.Color.Transparent
-        Me.Button19.BackgroundImage = Global.Career_Prep_Course.My.Resources.Resources.PreviousQuestion
+        Me.Button19.BackgroundImage = CType(resources.GetObject("Button19.BackgroundImage"), System.Drawing.Image)
         Me.Button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button19.FlatAppearance.BorderSize = 0
         Me.Button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -979,18 +979,18 @@ Partial Class Quiz
         Me.Panel12.Size = New System.Drawing.Size(767, 462)
         Me.Panel12.TabIndex = 10
         '
-        'Button21
+        'Button23
         '
-        Me.Button21.BackColor = System.Drawing.Color.Transparent
-        Me.Button21.BackgroundImage = CType(resources.GetObject("Button21.BackgroundImage"), System.Drawing.Image)
-        Me.Button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button21.FlatAppearance.BorderSize = 0
-        Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button21.Location = New System.Drawing.Point(184, 270)
-        Me.Button21.Name = "Button21"
-        Me.Button21.Size = New System.Drawing.Size(141, 77)
-        Me.Button21.TabIndex = 0
-        Me.Button21.UseVisualStyleBackColor = False
+        Me.Button23.BackColor = System.Drawing.Color.Transparent
+        Me.Button23.BackgroundImage = CType(resources.GetObject("Button23.BackgroundImage"), System.Drawing.Image)
+        Me.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button23.FlatAppearance.BorderSize = 0
+        Me.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button23.Location = New System.Drawing.Point(584, 377)
+        Me.Button23.Name = "Button23"
+        Me.Button23.Size = New System.Drawing.Size(98, 38)
+        Me.Button23.TabIndex = 2
+        Me.Button23.UseVisualStyleBackColor = False
         '
         'Button22
         '
@@ -1005,18 +1005,18 @@ Partial Class Quiz
         Me.Button22.TabIndex = 1
         Me.Button22.UseVisualStyleBackColor = False
         '
-        'Button23
+        'Button21
         '
-        Me.Button23.BackColor = System.Drawing.Color.Transparent
-        Me.Button23.BackgroundImage = CType(resources.GetObject("Button23.BackgroundImage"), System.Drawing.Image)
-        Me.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button23.FlatAppearance.BorderSize = 0
-        Me.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button23.Location = New System.Drawing.Point(584, 377)
-        Me.Button23.Name = "Button23"
-        Me.Button23.Size = New System.Drawing.Size(98, 38)
-        Me.Button23.TabIndex = 2
-        Me.Button23.UseVisualStyleBackColor = False
+        Me.Button21.BackColor = System.Drawing.Color.Transparent
+        Me.Button21.BackgroundImage = CType(resources.GetObject("Button21.BackgroundImage"), System.Drawing.Image)
+        Me.Button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button21.FlatAppearance.BorderSize = 0
+        Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button21.Location = New System.Drawing.Point(184, 270)
+        Me.Button21.Name = "Button21"
+        Me.Button21.Size = New System.Drawing.Size(141, 77)
+        Me.Button21.TabIndex = 0
+        Me.Button21.UseVisualStyleBackColor = False
         '
         'Quiz
         '
