@@ -206,138 +206,97 @@
     'Returns flagged.
     'Ordered Last-First
     Public Function getFlagged() As StudentList
-        Dim returnList As StudentList = New StudentList()
-        Dim flag = False
-        Dim dummyList = New StudentList()
-        dummyList.addStudent("", "", -1, -1, "", False)
+        Dim returnList = New StudentList()
+        Dim temp
 
-        For Each currentStudent In studentList
-            If currentStudent.getFlagged() Then
-                returnList.addStudent(currentStudent)
-                flag = True
-            End If
-        Next
+        temp =
+                From currentStudent In studentList
+                Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
+                Where currentStudent.getComplete()
+                Order By search Ascending
+                Select returnList.addStudent(currentStudent)
 
-        If flag Then
-            Return returnList
-        Else
-            Return dummyList
-        End If
-
+        Return returnList
     End Function
 
     'Returns those without flags.
     'Ordered Last-First
     Public Function getNonFlagged() As StudentList
-        Dim returnList As StudentList = New StudentList()
-        Dim flag = False
-        Dim dummyList = New StudentList()
-        dummyList.addStudent("", "", -1, -1, "", False)
+        Dim returnList = New StudentList()
+        Dim temp
 
-        For Each currentStudent In studentList
-            If Not currentStudent.getFlagged() Then
-                returnList.addStudent(currentStudent)
-                flag = True
-            End If
-        Next
+        temp =
+                From currentStudent In studentList
+                Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
+                Where currentStudent.getComplete()
+                Order By search Ascending
+                Select returnList.addStudent(currentStudent)
 
-        If flag Then
-            Return returnList
-        Else
-            Return dummyList
-        End If
-
+        Return returnList
     End Function
 
     'Returns those that completed the course
     'Ordered Last-First
     Public Function getComplete() As StudentList
-        Dim returnList As StudentList = New StudentList()
-        Dim flag = False
-        Dim dummyList = New StudentList()
-        dummyList.addStudent("", "", -1, -1, "", False)
+        Dim returnList = New StudentList()
+        Dim temp
 
-        For Each currentStudent In studentList
-            If currentStudent.getComplete() Then
-                returnList.addStudent(currentStudent)
-                flag = True
-            End If
-        Next
+        temp =
+                From currentStudent In studentList
+                Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
+                Where currentStudent.getComplete()
+                Order By search Ascending
+                Select returnList.addStudent(currentStudent)
 
-        If flag Then
-            Return returnList
-        Else
-            Return dummyList
-        End If
-
+        Return returnList
     End Function
 
     'Returns those that have not completed the course
     'Ordered Last-First
     Public Function getIncomplete() As StudentList
-        Dim returnList As StudentList = New StudentList()
-        Dim flag = False
-        Dim dummyList = New StudentList()
-        dummyList.addStudent("", "", -1, -1, "", False)
+        Dim returnList = New StudentList()
+        Dim temp
 
-        For Each currentStudent In studentList
-            If Not currentStudent.getComplete() Then
-                returnList.addStudent(currentStudent)
-                flag = True
-            End If
-        Next
+        temp =
+                From currentStudent In studentList
+                Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
+                Where Not currentStudent.getComplete()
+                Order By search Ascending
+                Select returnList.addStudent(currentStudent)
 
-        If flag Then
-            Return returnList
-        Else
-            Return dummyList
-        End If
+        Return returnList
     End Function
 
     'Returns those that have less than thirty hours.
     'Ordered Last-First
     Public Function getLessThanThirtyHours() As StudentList
-        Dim returnList As StudentList = New StudentList()
-        Dim flag = False
-        Dim dummyList = New StudentList()
-        dummyList.addStudent("", "", -1, -1, "", False)
+        Dim returnList = New StudentList()
+        Dim temp
 
-        For Each currentStudent In studentList
-            If currentStudent.getHours() < 30 Then
-                returnList.addStudent(currentStudent)
-                flag = True
-            End If
-        Next
+        temp =
+                From currentStudent In studentList
+                Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
+                Where currentStudent.getHours() < 30
+                Order By search Ascending
+                Select returnList.addStudent(currentStudent)
 
-        If flag Then
-            Return returnList
-        Else
-            Return dummyList
-        End If
-
+        Return returnList
     End Function
 
     'Returns those that have more than or equal to than thirty hours.
     'Ordered Last-First
     Public Function getMoreThanThirtyHours() As StudentList
-        Dim returnList As StudentList = New StudentList()
-        Dim flag = False
-        Dim dummyList = New StudentList()
-        dummyList.addStudent("", "", -1, -1, "", False)
+        Dim returnList = New StudentList()
+        Dim temp
 
-        For Each currentStudent In studentList
-            If currentStudent.getHours() >= 30 Then
-                returnList.addStudent(currentStudent)
-                flag = True
-            End If
-        Next
+        temp =
+                From currentStudent In studentList
+                Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
+                Where currentStudent.getHours() >= 30
+                Order By search Ascending
+                Select returnList.addStudent(currentStudent)
 
-        If flag Then
-            Return returnList
-        Else
-            Return dummyList
-        End If
-
+        Return returnList
     End Function
 
     'Returns the Student saved at index.
@@ -372,7 +331,7 @@
     'Takes tryToFlag to pass into the new students.
     'Assumes the CSV is completely correct.
     'Adds onto the existing list. Does NOT return a new StudentList.
-    Public Function readCSV(ByVal filePath As String, ByVal tryToFlag As Boolean) As Integer()
+    Public Sub readCSV(ByVal filePath As String, ByVal tryToFlag As Boolean)
 
         Try
             Using MyReader As New Microsoft.VisualBasic.
@@ -422,7 +381,7 @@
                         MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
                     End Try
 
-                    If fieldNumber > 5 Then
+                    If (fieldNumber > 5) Then
                         studentList.Add(New Student(lastName, firstName, UGAID, hours, email, tryToFlag))
 
                         If (complete) Then
@@ -443,24 +402,24 @@
         Catch ex As Exception
             MsgBox("Could not read from " & filePath & ".")
         End Try
-    End Function
+    End Sub
 
     Public Sub writeCSV(ByVal fileName As String)
 
-        If studentList.Count > 0 Then
+        If (studentList.Count > 0) Then
             Try
                 My.Computer.FileSystem.WriteAllText(fileName, studentList(0).getLast() & "," & studentList(0).getFirst() & "," & studentList(0).getID() & "," & studentList(0).getHours() & "," & studentList(0).getEmail() & studentList(0).getFlagged() & "," & studentList(0).getComplete() & vbCrLf, False)
             Catch ex As Exception
 
             End Try
 
-            If studentList.Count > 1 Then
-                For i As Integer = 1 To studentList.Count
-                    Try
+            If(studentList.Count > 1)
+            For i As Integer = 1 To studentList.Count
+                Try
                         My.Computer.FileSystem.WriteAllText(fileName, studentList(i).getLast() & "," & studentList(i).getFirst() & "," & studentList(i).getID() & "," & studentList(i).getHours() & "," & studentList(i).getEmail() & studentList(i).getFlagged() & "," & studentList(i).getComplete() & vbCrLf, True)
-                    Catch ex As Exception
+                Catch ex As Exception
 
-                    End Try
+                End Try
                 Next
             End If
         End If
