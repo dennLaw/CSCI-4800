@@ -382,7 +382,8 @@
     'Takes tryToFlag to pass into the new students.
     'Assumes the CSV is completely correct.
     'Adds onto the existing list. Does NOT return a new StudentList.
-    Public Function readCSV(ByVal filePath As String, ByVal tryToFlag As Boolean) As Integer()
+    Public Function readCSV(ByVal filePath As String, ByVal tryToFlag As Boolean) As List(Of Integer)
+        Dim errorLines As List(Of Integer) = New List(Of Integer)
 
         Try
             Using MyReader As New Microsoft.VisualBasic.
@@ -401,6 +402,8 @@
                 Dim email As String = ""
                 Dim flag As Boolean = False
                 Dim complete As Boolean = False
+                Dim lineCount As Integer = 1
+                Dim correctSyntax As Boolean = True
 
                 While Not MyReader.EndOfData
                     Try
@@ -413,26 +416,42 @@
                                 Case 2
                                     firstName = currentField
                                 Case 3
-                                    UGAID = CInt(currentField)
+                                    If IsNumeric(currentField) Then
+                                        UGAID = CInt(currentField)
+                                    Else
+                                        correctSyntax = False
+                                    End If
                                 Case 4
-                                    hours = CInt(currentField)
+                                    If IsNumeric(currentField) Then
+                                        hours = CInt(currentField)
+                                    Else
+                                        correctSyntax = False
+                                    End If
                                 Case 5
                                     email = currentField
                                 Case 6
-                                    flag = CBool(currentField)
+                                    If IsNumeric(currentField) Then
+                                        flag = CBool(currentField)
+                                    Else
+                                        correctSyntax = False
+                                    End If
                                 Case 7
-                                    complete = CBool(currentField)
+                                    If IsNumeric(currentField) Then
+                                        complete = CBool(currentField)
+                                    Else
+                                        correctSyntax = False
+                                    End If
                                 Case Else
-                                    MsgBox("The CSV file has incorrect input.")
+                                    'errorLines.Add(lineCount)
                             End Select
 
                             fieldNumber += 1
                         Next
                     Catch ex As Microsoft.VisualBasic.FileIO.MalformedLineException
-                        MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
+                        errorLines.Add(lineCount)
                     End Try
 
-                    If fieldNumber > 5 Then
+                    If fieldNumber > 7 & correctSyntax Then
                         studentList.Add(New Student(lastName, firstName, UGAID, hours, email, tryToFlag))
 
                         If (complete) Then
@@ -444,15 +463,19 @@
                         End If
 
                     Else
-                        MsgBox("The CSV file has incorrect input")
+                        errorLines.Add(lineCount)
                     End If
 
                     fieldNumber = 1
+                    correctSyntax = True
+                    lineCount += 1
                 End While
             End Using
         Catch ex As Exception
-            MsgBox("Could not read from " & filePath & ".")
+            errorLines.Add(-1)
         End Try
+
+        Return errorLines
     End Function
 
     Public Sub writeCSV(ByVal fileName As String)
