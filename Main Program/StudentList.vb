@@ -6,45 +6,38 @@
         studentList = New List(Of Student)
     End Sub
 
-    Public Sub New(ByVal sstudentList As List(Of Student))
-        studentList = sstudentList
-    End Sub
-
-    Public Sub New(ByVal sstudentList As StudentList)
-        studentList = New List(Of Student)
-    End Sub
-
     'Adds a Student to the list of the parameters passed in.
     Public Sub addStudent(ByVal last As String, ByVal first As String, ByVal id As Integer, ByVal hours As Integer, ByVal email As String, ByVal tryToFlag As Boolean)
         studentList.Add(New Student(last, first, id, hours, email, tryToFlag))
     End Sub
 
     'Adds a Student to the list.
-    Public Sub addStudent(ByVal student As Student)
+    Public Function addStudent(ByVal student As Student) As Student
         studentList.Add(student)
-    End Sub
+
+        Return student
+    End Function
 
     'Removes the first occurence of an object matching the "Student" passed in exactly.
     Public Sub removeStudent(ByVal last As String, ByVal first As String, ByVal id As Integer, ByVal hours As Integer, ByVal email As String, ByVal tryToFlag As Boolean)
         studentList.Remove(New Student(last, first, id, hours, email, tryToFlag))
     End Sub
 
+    'Removes the first occurence an object matching the "Student" passed in exactly.
     Public Sub removeStudent(ByVal student As Student)
         studentList.Remove(student)
     End Sub
 
     'Removes the first occurence of an object's ID matching the ID passed in.
     Public Sub removeStudentByID(ByVal ID As Integer)
-        Dim temp = New StudentList()
-
-        temp =
+        Dim temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getFlagged()
                 Where CStr(currentStudent.getID()).IndexOf(CStr(ID)) <> -1
                 Order By search Ascending
                 Select currentStudent
 
-        studentList.Remove(New StudentList(temp).getIndex(0))
+        studentList.Remove(temp)
     End Sub
 
     'Attempts to flag the first Student matching the passed in student.
@@ -68,6 +61,11 @@
         studentList.Find(Function(e) e.Equals(student)).setComplete()
     End Sub
 
+    'Flags the first Student matching the passed in student.
+    Public Sub incompleteStudent(ByVal student As Student)
+        studentList.Find(Function(e) e.Equals(student)).setIncomplete()
+    End Sub
+
     'Returns a new StudentList sorted as requested.
     'If the fieldNumber is  0: Sort by First Name
     '                       1: Sort by Last Name
@@ -82,114 +80,116 @@
     'On incorrect input, will return an empty list.
     Public Function sortBy(ByVal fieldNumber As Integer, ByVal upOrDown As Integer) As StudentList
         Dim returnList = New StudentList()
+        Dim temp
 
         If fieldNumber = 0 And upOrDown = 0 Then
-            returnList =
+            temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getFirst() & ", " & currentStudent.getLast()
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
         ElseIf fieldNumber = 0 And upOrDown = 1 Then
-            returnList =
+            temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getFirst() & ", " & currentStudent.getLast()
                 Order By search Descending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
         ElseIf fieldNumber = 1 And upOrDown = 0 Then
-            returnList =
+            temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
         ElseIf fieldNumber = 1 And upOrDown = 1 Then
-            returnList =
+            temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
                 Order By search Descending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
         ElseIf fieldNumber = 2 And upOrDown = 0 Then
-            returnList =
+            temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getID()
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
         ElseIf fieldNumber = 2 And upOrDown = 1 Then
             returnList =
                 From currentStudent In studentList
                 Let search = currentStudent.getID()
                 Order By search Descending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
         ElseIf fieldNumber = 3 And upOrDown = 0 Then
-            returnList =
+            temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getHours()
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
         ElseIf fieldNumber = 3 And upOrDown = 1 Then
-            returnList =
+            temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getHours()
                 Order By search Descending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
         ElseIf fieldNumber = 4 And upOrDown = 0 Then
-            returnList =
+            temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getEmail()
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
         ElseIf fieldNumber = 4 And upOrDown = 1 Then
-            returnList =
+            temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getEmail()
                 Order By search Descending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
         ElseIf fieldNumber = 5 And upOrDown = 0 Then
-            returnList =
+            temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getComplete()
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
         ElseIf fieldNumber = 5 And upOrDown = 1 Then
-            returnList =
+            temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getComplete()
                 Order By search Descending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
         ElseIf fieldNumber = 6 And upOrDown = 0 Then
-            returnList =
+            temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getFlagged()
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
         ElseIf fieldNumber = 6 And upOrDown = 1 Then
-            returnList =
+            temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getFlagged()
                 Order By search Descending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
         End If
 
-        Return New StudentList(returnList)
+        Return returnList
     End Function
 
     'Returns any Students with any field matching searchFor.
     Public Function searchBy(ByVal searchFor As String) As StudentList
         Dim returnList = New StudentList()
+        Dim temp
 
-        returnList =
+        temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getFlagged()
                 Where currentStudent.getFirst().IndexOf(searchFor) <> -1 Or
@@ -198,99 +198,105 @@
                     CStr(currentStudent.getHours()).IndexOf(searchFor) <> -1 Or
                     currentStudent.getEmail().IndexOf(searchFor) <> -1
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
-        Return New StudentList(returnList)
+        Return returnList
     End Function
 
     'Returns flagged.
     'Ordered Last-First
     Public Function getFlagged() As StudentList
         Dim returnList = New StudentList()
+        Dim temp
 
-        returnList =
+        temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
                 Where currentStudent.getComplete()
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
-        Return New StudentList(returnList)
+        Return returnList
     End Function
 
     'Returns those without flags.
     'Ordered Last-First
     Public Function getNonFlagged() As StudentList
         Dim returnList = New StudentList()
+        Dim temp
 
-        returnList =
+        temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
                 Where currentStudent.getComplete()
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
-        Return New StudentList(returnList)
+        Return returnList
     End Function
 
     'Returns those that completed the course
     'Ordered Last-First
     Public Function getComplete() As StudentList
         Dim returnList = New StudentList()
+        Dim temp
 
-        returnList =
+        temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
                 Where currentStudent.getComplete()
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
-        Return New StudentList(returnList)
+        Return returnList
     End Function
 
     'Returns those that have not completed the course
     'Ordered Last-First
     Public Function getIncomplete() As StudentList
         Dim returnList = New StudentList()
+        Dim temp
 
-        returnList =
+        temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
                 Where Not currentStudent.getComplete()
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
-        Return New StudentList(returnList)
+        Return returnList
     End Function
 
     'Returns those that have less than thirty hours.
     'Ordered Last-First
     Public Function getLessThanThirtyHours() As StudentList
         Dim returnList = New StudentList()
+        Dim temp
 
-        returnList =
+        temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
                 Where currentStudent.getHours() < 30
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
-        Return New StudentList(returnList)
+        Return returnList
     End Function
 
     'Returns those that have more than or equal to than thirty hours.
     'Ordered Last-First
     Public Function getMoreThanThirtyHours() As StudentList
         Dim returnList = New StudentList()
+        Dim temp
 
-        returnList =
+        temp =
                 From currentStudent In studentList
                 Let search = currentStudent.getLast() & ", " & currentStudent.getFirst()
                 Where currentStudent.getHours() >= 30
                 Order By search Ascending
-                Select currentStudent
+                Select returnList.addStudent(currentStudent)
 
-        Return New StudentList(returnList)
+        Return returnList
     End Function
 
     'Returns the Student saved at index.
