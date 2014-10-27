@@ -392,7 +392,7 @@
     'Takes tryToFlag to pass into the new students.
     'Assumes the CSV is completely correct.
     'Adds onto the existing list. Does NOT return a new StudentList.
-    Public Sub readCSV(ByVal filePath As String, ByVal tryToFlag As Boolean) As Integer()
+    Public Sub readCSV(ByVal filePath As String, ByVal tryToFlag As Boolean)
 
         Try
             Using MyReader As New Microsoft.VisualBasic.
