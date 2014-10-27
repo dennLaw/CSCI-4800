@@ -365,6 +365,16 @@
         Return studentList.Count
     End Function
 
+    'Populates the list with random times.
+    'Assigns each student with a time between 1 and 100
+    Public Sub populateListRandomTime()
+
+        For Each currentStudent In studentList
+            currentStudent.setTimeToComplete(CInt(Math.Floor(100 * Rnd())) + 1)
+        Next
+
+    End Sub
+
     'Gets the average time of the list.
     Public Function getAvgTime() As Double
         Dim sum As Double = 0
