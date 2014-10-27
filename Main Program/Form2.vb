@@ -19,7 +19,10 @@ Public Class Form2
 
         ' Dim student1 = New Student(last, first, id, hours, email, tryToFlag)
         'Dim student = CreateStudent(LastBx.Text, FirstBx.Text, CInt(IDBx.Text), CInt(HoursBx.Text), EmailBx.Text, False)
-        Form1.DG.Rows.Add(True, (LastBx.Text), (FirstBx.Text), CInt(IDBx.Text), CInt(HoursBx.Text), (EmailBx.Text), "Incomplete", "Yes")
+        Form1.DG.Rows.Add(False, (LastBx.Text), (FirstBx.Text), CInt(IDBx.Text), CInt(HoursBx.Text), (EmailBx.Text), "Incomplete", "Flagged")
+
+
+
         Me.Close()
 
 
@@ -61,4 +64,6 @@ Public Class Form2
 
 
     ' End Function
+
+
 End Class
