@@ -186,21 +186,28 @@
 
     'Returns any Students with any field matching searchFor.
     Public Function searchBy(ByVal searchFor As String) As StudentList
-        Dim returnList = New StudentList()
-        Dim temp
+        Dim returnList As StudentList = New StudentList()
+        Dim flag = False
+        Dim dummyList = New StudentList()
+        dummyList.addStudent("", "", -1, -1, "", False)
 
-        temp =
-                From currentStudent In studentList
-                Let search = currentStudent.getFlagged()
-                Where currentStudent.getFirst().IndexOf(searchFor) <> -1 Or
-                    currentStudent.getLast().IndexOf(searchFor) <> -1 Or
-                    CStr(currentStudent.getID()).IndexOf(searchFor) <> -1 Or
-                    CStr(currentStudent.getHours()).IndexOf(searchFor) <> -1 Or
-                    currentStudent.getEmail().IndexOf(searchFor) <> -1
-                Order By search Ascending
-                Select returnList.addStudent(currentStudent)
+        For Each currentStudent In studentList
+            If currentStudent.getFirst().IndexOf(searchFor) <> -1 Or _
+                currentStudent.getLast().IndexOf(searchFor) <> -1 Or _
+                CStr(currentStudent.getID()).IndexOf(searchFor) <> -1 Or _
+                CStr(currentStudent.getHours()).IndexOf(searchFor) <> -1 Or _
+                currentStudent.getEmail().IndexOf(searchFor) <> -1 Then
 
-        Return returnList
+                returnList.addStudent(currentStudent)
+                flag = True
+            End If
+        Next
+
+        If flag Then
+            Return returnList
+        Else
+            Return dummyList
+        End If
     End Function
 
     'Returns flagged.
