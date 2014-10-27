@@ -69,6 +69,15 @@
         studentList.Find(Function(e) e.Equals(student)).setIncomplete()
     End Sub
 
+    'Flags all students matching ID as complete.
+    Public Sub completeStudent(ByVal ID As Integer)
+        For Each currentStudent In studentList
+            If currentStudent.getID() = ID Then
+                currentStudent.setComplete()
+            End If
+        Next
+    End Sub
+
     'Returns a new StudentList sorted as requested.
     'If the fieldNumber is  0: Sort by First Name
     '                       1: Sort by Last Name
