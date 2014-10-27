@@ -30,14 +30,17 @@
 
     'Removes the first occurence of an object's ID matching the ID passed in.
     Public Sub removeStudentByID(ByVal ID As Integer)
-        Dim temp =
-                From currentStudent In studentList
-                Let search = currentStudent.getFlagged()
-                Where CStr(currentStudent.getID()).IndexOf(CStr(ID)) <> -1
-                Order By search Ascending
-                Select currentStudent
+        Dim temp As StudentList = New StudentList()
+        Dim flag = False
 
-        studentList.Remove(temp)
+        For Each currentStudent In studentList
+            If CStr(currentStudent.getID()).IndexOf(CStr(ID)) <> -1 Then
+                temp.addStudent(currentStudent)
+                flag = True
+            End If
+        Next
+
+        studentList.Remove(temp.getIndex(0))
     End Sub
 
     'Attempts to flag the first Student matching the passed in student.
