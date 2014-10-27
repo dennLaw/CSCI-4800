@@ -446,7 +446,7 @@
 
             End Try
 
-            If(studentList.Count > 1)
+            If (studentList.Count > 1) Then
                 For i As Integer = 1 To studentList.Count
                     Try
                         My.Computer.FileSystem.WriteAllText(fileName, studentList(i).getLast() & "," & studentList(i).getFirst() & "," & studentList(i).getID() & "," & studentList(i).getHours() & "," & studentList(i).getEmail() & studentList(i).getFlagged() & "," & studentList(i).getComplete() & vbCrLf, True)
