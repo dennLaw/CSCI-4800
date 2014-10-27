@@ -1,6 +1,5 @@
 ﻿Public Class StudentList
 
-    '
     Private studentList As List(Of Student)
 
     Public Sub New()
@@ -393,8 +392,7 @@
     'Takes tryToFlag to pass into the new students.
     'Assumes the CSV is completely correct.
     'Adds onto the existing list. Does NOT return a new StudentList.
-    Public Function readCSV(ByVal filePath As String, ByVal tryToFlag As Boolean) As List(Of Integer)
-        Dim errorLines As List(Of Integer) = New List(Of Integer)
+    Public Sub readCSV(ByVal filePath As String, ByVal tryToFlag As Boolean) As Integer()
 
         Try
             Using MyReader As New Microsoft.VisualBasic.
@@ -413,8 +411,6 @@
                 Dim email As String = ""
                 Dim flag As Boolean = False
                 Dim complete As Boolean = False
-                Dim lineCount As Integer = 1
-                Dim correctSyntax As Boolean = True
 
                 While Not MyReader.EndOfData
                     Try
@@ -427,42 +423,26 @@
                                 Case 2
                                     firstName = currentField
                                 Case 3
-                                    If IsNumeric(currentField) Then
-                                        UGAID = CInt(currentField)
-                                    Else
-                                        correctSyntax = False
-                                    End If
+                                    UGAID = CInt(currentField)
                                 Case 4
-                                    If IsNumeric(currentField) Then
-                                        hours = CInt(currentField)
-                                    Else
-                                        correctSyntax = False
-                                    End If
+                                    hours = CInt(currentField)
                                 Case 5
                                     email = currentField
                                 Case 6
-                                    If IsNumeric(currentField) Then
-                                        flag = CBool(currentField)
-                                    Else
-                                        correctSyntax = False
-                                    End If
+                                    flag = CBool(currentField)
                                 Case 7
-                                    If IsNumeric(currentField) Then
-                                        complete = CBool(currentField)
-                                    Else
-                                        correctSyntax = False
-                                    End If
+                                    complete = CBool(currentField)
                                 Case Else
-                                    'errorLines.Add(lineCount)
+                                    MsgBox("The CSV file has incorrect input.")
                             End Select
 
                             fieldNumber += 1
                         Next
                     Catch ex As Microsoft.VisualBasic.FileIO.MalformedLineException
-                        errorLines.Add(lineCount)
+                        MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
                     End Try
 
-                    If fieldNumber > 7 & correctSyntax Then
+                    If fieldNumber > 5 Then
                         studentList.Add(New Student(lastName, firstName, UGAID, hours, email, tryToFlag))
 
                         If (complete) Then
@@ -474,20 +454,16 @@
                         End If
 
                     Else
-                        errorLines.Add(lineCount)
+                        MsgBox("The CSV file has incorrect input")
                     End If
 
                     fieldNumber = 1
-                    correctSyntax = True
-                    lineCount += 1
                 End While
             End Using
         Catch ex As Exception
-            errorLines.Add(-1)
+            MsgBox("Could not read from " & filePath & ".")
         End Try
-
-        Return errorLines
-    End Function
+    End Sub
 
     Public Sub writeCSV(ByVal fileName As String)
 
