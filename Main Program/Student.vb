@@ -78,9 +78,11 @@
     Public Sub setIncomplete()
         isComplete = False
     End Sub
+	
     Public Sub setID(ByVal id As Integer)
         UGAID = id
     End Sub
+	
     Public Sub forceUnflag()
         isFlagged = False
     End Sub

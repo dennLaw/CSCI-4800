@@ -466,10 +466,14 @@
 
                         If (complete) Then
                             studentList(studentList.Count - 1).setComplete()
+						Else
+							studentList(studentList.Count -1).setIncomplete()
                         End If
 
                         If (flag) Then
                             studentList(studentList.Count - 1).forceFlag()
+						Else
+							studentList(studentList.Count - 1).forceUnflag()
                         End If
 
                     Else
