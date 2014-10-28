@@ -172,6 +172,7 @@ Partial Class Form1
         Me.DG.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DG.Location = New System.Drawing.Point(13, 33)
         Me.DG.Name = "DG"
+        Me.DG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DG.Size = New System.Drawing.Size(744, 350)
         Me.DG.TabIndex = 0
         '
@@ -718,7 +719,7 @@ Partial Class Form1
         'Button22
         '
         Me.Button22.BackColor = System.Drawing.Color.Transparent
-        Me.Button22.BackgroundImage = CType(resources.GetObject("Button22.BackgroundImage"), System.Drawing.Image)
+        Me.Button22.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.ListIconFixed
         Me.Button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button22.FlatAppearance.BorderSize = 0
         Me.Button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -742,13 +743,13 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(899, 650)
-        Me.Controls.Add(Me.Time)
-        Me.Controls.Add(Me.Flagged)
-        Me.Controls.Add(Me.Complete)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Button22)
+        Me.Controls.Add(Me.Complete)
         Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Time)
+        Me.Controls.Add(Me.Flagged)
+        Me.Controls.Add(Me.Button22)
         Me.Controls.Add(Me.Label2)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
