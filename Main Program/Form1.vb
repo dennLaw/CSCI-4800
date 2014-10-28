@@ -312,6 +312,7 @@
                      , Complete.CreateGraphics _
                      , New Point(130, 175) _
                      , New Size(125, 125))
+
         DrawPieChart({list.getLessThanThirtyHours().getComplete().getCount(), list.getLessThanThirtyHours().getIncomplete().getCount()} _
                      , {Color.Blue, Color.Red} _
                      , Complete.CreateGraphics _
@@ -337,10 +338,10 @@
         ' Graphics g = Complete.CreateGraphics
 
         DrawPieChart({list.getMoreThanThirtyHours().getComplete().getCount(), list.getMoreThanThirtyHours().getIncomplete().getCount()} _
-                          , {Color.Blue, Color.Red} _
-                          , Complete.CreateGraphics _
-                         , New Point(130, 175) _
-                      , New Size(125, 125))
+                     , {Color.Blue, Color.Red} _
+                     , Complete.CreateGraphics _
+                     , New Point(130, 175) _
+                     , New Size(125, 125))
 
         DrawPieChart({list.getLessThanThirtyHours().getComplete().getCount(), list.getLessThanThirtyHours().getIncomplete().getCount()} _
                      , {Color.Blue, Color.Red} _
@@ -353,12 +354,36 @@
         Time.Visible = False
         Flagged.Visible = True
         Complete.Visible = False
+
+        DrawPieChart({list.getMoreThanThirtyHours().getFlagged().getCount(), list.getMoreThanThirtyHours().getNonFlagged().getCount()} _
+                     , {Color.Blue, Color.Red} _
+                     , Complete.CreateGraphics _
+                     , New Point(130, 175) _
+                     , New Size(125, 125))
+
+        DrawPieChart({list.getLessThanThirtyHours().getFlagged().getCount(), list.getLessThanThirtyHours().getNonFlagged().getCount()} _
+                     , {Color.Blue, Color.Red} _
+                     , Complete.CreateGraphics _
+                     , New Point(550, 175) _
+                     , New Size(125, 125))
     End Sub
     'Leaves complete panel to flag
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Complete.Visible = False
         Flagged.Visible = True
         Time.Visible = False
+
+        DrawPieChart({list.getMoreThanThirtyHours().getFlagged().getCount(), list.getMoreThanThirtyHours().getNonFlagged().getCount()} _
+                     , {Color.Blue, Color.Red} _
+                     , Complete.CreateGraphics _
+                     , New Point(130, 175) _
+                     , New Size(125, 125))
+
+        DrawPieChart({list.getLessThanThirtyHours().getFlagged().getCount(), list.getLessThanThirtyHours().getNonFlagged().getCount()} _
+                     , {Color.Blue, Color.Red} _
+                     , Complete.CreateGraphics _
+                     , New Point(550, 175) _
+                     , New Size(125, 125))
     End Sub
     'Leaves Flagged to Complete
     Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
@@ -370,6 +395,12 @@
                      , {Color.Blue, Color.Red} _
                      , Complete.CreateGraphics _
                      , New Point(130, 175) _
+                     , New Size(125, 125))
+
+        DrawPieChart({list.getLessThanThirtyHours().getComplete().getCount(), list.getLessThanThirtyHours().getIncomplete().getCount()} _
+                     , {Color.Blue, Color.Red} _
+                     , Complete.CreateGraphics _
+                     , New Point(160, 200) _
                      , New Size(125, 125))
     End Sub
     'Leaves Flaged to time
