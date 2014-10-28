@@ -225,10 +225,6 @@
         Next
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub ShowUnflaggedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowUnflaggedToolStripMenuItem.Click
         Dim unFlaggedList = New StudentList()
         unFlaggedList = list.getFlagged()
@@ -308,5 +304,116 @@
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
         Panel1.Visible = False
         Panel2.Visible = False
+        Complete.Visible = True
+        Panel4.Visible = True
+
+        DrawPieChart({list.getMoreThanThirtyHours().getComplete().getCount(), list.getMoreThanThirtyHours().getIncomplete().getCount()} _
+                     , {Color.Blue, Color.Red} _
+                     , Complete.CreateGraphics _
+                     , New Point(130, 175) _
+                     , New Size(125, 125))
+        DrawPieChart({list.getLessThanThirtyHours().getComplete().getCount(), list.getLessThanThirtyHours().getIncomplete().getCount()} _
+                     , {Color.Blue, Color.Red} _
+                     , Complete.CreateGraphics _
+                     , New Point(550, 175) _
+                     , New Size(125, 125))
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+    'Leaves Complete panel to Time
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Complete.Visible = False
+        Time.Visible = True
+        Flagged.Visible = False
+    End Sub
+    'Leaves Time panel to complete
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Time.Visible = False
+        Complete.Visible = True
+        Flagged.Visible = False
+
+        ' Graphics g = Complete.CreateGraphics
+
+        DrawPieChart({list.getMoreThanThirtyHours().getComplete().getCount(), list.getMoreThanThirtyHours().getIncomplete().getCount()} _
+                          , {Color.Blue, Color.Red} _
+                          , Complete.CreateGraphics _
+                         , New Point(130, 175) _
+                      , New Size(125, 125))
+
+        DrawPieChart({list.getLessThanThirtyHours().getComplete().getCount(), list.getLessThanThirtyHours().getIncomplete().getCount()} _
+                     , {Color.Blue, Color.Red} _
+                     , Complete.CreateGraphics _
+                     , New Point(160, 200) _
+                     , New Size(125, 125))
+    End Sub
+    'Leaves time panel to flagged
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Time.Visible = False
+        Flagged.Visible = True
+        Complete.Visible = False
+    End Sub
+    'Leaves complete panel to flag
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Complete.Visible = False
+        Flagged.Visible = True
+        Time.Visible = False
+    End Sub
+    'Leaves Flagged to Complete
+    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+        Flagged.Visible = False
+        Complete.Visible = True
+        Time.Visible = False
+
+        DrawPieChart({list.getMoreThanThirtyHours().getComplete().getCount(), list.getMoreThanThirtyHours().getIncomplete().getCount()} _
+                     , {Color.Blue, Color.Red} _
+                     , Complete.CreateGraphics _
+                     , New Point(130, 175) _
+                     , New Size(125, 125))
+    End Sub
+    'Leaves Flaged to time
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+        Flagged.Visible = False
+        Time.Visible = True
+        Complete.Visible = False
+    End Sub
+
+    Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
+        Flagged.Visible = False
+        Complete.Visible = False
+        Time.Visible = False
+        Panel1.Visible = True
+        Panel4.Visible = False
+        Panel2.Visible = True
+    End Sub
+
+    Public Sub DrawPieChart(ByVal percents() As Integer, ByVal colors() As Color, ByVal surface As Graphics, ByVal location As Point, ByVal pieSize As Size)
+
+        Dim temp As Integer = percents(0) + percents(1)
+
+        percents(0) = percents(0) * 100 / temp
+        percents(1) = percents(1) * 100 / temp
+
+        Dim sum As Integer = 0
+        For Each percent As Integer In percents
+            sum += percent
+
+        Next
+
+        Dim percentTotal As Integer = 0
+        For percent As Integer = 0 To percents.Length() - 1
+
+            surface.FillPie(New SolidBrush(colors(percent)), New Rectangle(location, pieSize), CType(percentTotal * 360 / 100, Single),
+                            CType(percents(percent) * 360 / 100, Single))
+            percentTotal += percents(percent)
+
+        Next
+        Return
+    End Sub
+
+    Private Sub Complete_Paint(sender As Object, e As PaintEventArgs) Handles Complete.Paint
+
     End Sub
 End Class
+
