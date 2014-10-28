@@ -23,3 +23,11 @@ Nyx,Andromache,810889275,58,anyx@uga.edu,false,true
 Delia,Sarpedon,810006662,45,sdel@uga.edu,false,false
 Hippolyta,Iapetos,810616066,12,ihipp@uga.edu,false,true
 Zephyrus,Aineias,810647567,7,zephyr@uga.edu,false,false
+Brook,Haydee,810681118,40,hbrook@uga.edu,true,false
+Chapman,Bhatair,810068733,5,bchap@uga.edu,false,true
+Abraham,Aleta,810750314,49,aabra@uga.edu,false,false
+Haanraadts,Neven,81077416,80,nhaan@uga.edu,false,true
+Snijders,Anthony,810259084,18,asni@uga.edu,false,true
+Taggart,Berna,810331869,95,btag@uga.edu,true,false
+Colton,Heiner,810615293,37,hcolt@uga.edu,true,false
+Novosad,Dene,810132376,84,dnovo@uga.edu,true,false
