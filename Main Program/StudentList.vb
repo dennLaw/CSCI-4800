@@ -374,7 +374,14 @@
 
     'Returns size of the list.
     Public Function getCount() As Integer
-        Return studentList.Count
+        Dim dummyList As StudentList = New StudentList()
+        dummyList.addStudent("", "", -1, -1, "", False)
+
+        If (dummyList.getIndex(0).Equals(studentList(0))) Then
+            Return 0
+        Else
+            Return studentList.Count
+        End If
     End Function
 
     'Populates the list with random times.
