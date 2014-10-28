@@ -30,21 +30,26 @@
 
     'Removes the first occurence of an object's ID matching the ID passed in.
     Public Sub removeStudentByID(ByVal ID As Integer)
-        Dim returnList As StudentList = New StudentList()
-        Dim flag = False
+        Dim flag = True
 
         For Each currentStudent In studentList
-            If Not currentStudent.getID() = ID Then
-                returnList.addStudent(currentStudent)
-                flag = True
+            If flag And currentStudent.getID() = ID Then
+                studentList.Remove(currentStudent)
+                flag = False
             End If
         Next
+    End Sub
 
-        If flag Then
-            studentList.Remove(returnList.getIndex(0))
-        Else
+    'Removes the first occurence of an object's email matching the email passed in.
+    Public Sub removeStudentByID(ByVal email As String)
+        Dim flag = True
 
-        End If
+        For Each currentStudent In studentList
+            If flag And currentStudent.getEmail() = email Then
+                studentList.Remove(currentStudent)
+                flag = False
+            End If
+        Next
     End Sub
 
     'Attempts to flag the first Student matching the passed in student.
@@ -75,9 +80,12 @@
 
     'Flags all students matching ID as complete.
     Public Sub completeStudent(ByVal ID As Integer)
+        Dim flag = True
+
         For Each currentStudent In studentList
-            If Not currentStudent.getID() = ID Then
+            If flag And currentStudent.getID() = ID Then
                 currentStudent.setComplete()
+                flag = False
             End If
         Next
     End Sub
