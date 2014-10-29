@@ -458,7 +458,7 @@
                             fieldNumber += 1
                         Next
                     Catch ex As Microsoft.VisualBasic.FileIO.MalformedLineException
-                        'MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
+                        MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
                     End Try
 
                     If fieldNumber > 5 Then
@@ -466,10 +466,14 @@
 
                         If (complete) Then
                             studentList(studentList.Count - 1).setComplete()
+						Else
+							studentList(studentList.Count -1).setIncomplete()
                         End If
 
                         If (flag) Then
                             studentList(studentList.Count - 1).forceFlag()
+						Else
+							studentList(studentList.Count - 1).forceUnflag()
                         End If
 
                     Else
