@@ -55,6 +55,14 @@ Partial Class Form1
         Me.OpenFile = New System.Windows.Forms.OpenFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Complete = New System.Windows.Forms.Panel()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -72,6 +80,14 @@ Partial Class Form1
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Flagged = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.RedBar = New System.Windows.Forms.Label()
+        Me.BlueBar = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -342,6 +358,14 @@ Partial Class Form1
         'Complete
         '
         Me.Complete.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Complete.Controls.Add(Me.Label32)
+        Me.Complete.Controls.Add(Me.Label31)
+        Me.Complete.Controls.Add(Me.Label30)
+        Me.Complete.Controls.Add(Me.Label29)
+        Me.Complete.Controls.Add(Me.Label28)
+        Me.Complete.Controls.Add(Me.Label27)
+        Me.Complete.Controls.Add(Me.Label26)
+        Me.Complete.Controls.Add(Me.Label25)
         Me.Complete.Controls.Add(Me.Label23)
         Me.Complete.Controls.Add(Me.Label8)
         Me.Complete.Controls.Add(Me.Label5)
@@ -360,6 +384,82 @@ Partial Class Form1
         Me.Complete.Name = "Complete"
         Me.Complete.Size = New System.Drawing.Size(771, 443)
         Me.Complete.TabIndex = 6
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(681, 381)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(59, 13)
+        Me.Label32.TabIndex = 38
+        Me.Label32.Text = "9/25 (36%)"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(706, 333)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(65, 13)
+        Me.Label31.TabIndex = 37
+        Me.Label31.Text = "16/25 (64%)"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(332, 381)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(65, 13)
+        Me.Label30.TabIndex = 36
+        Me.Label30.Text = "20/25 (80%)"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(257, 339)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(59, 13)
+        Me.Label29.TabIndex = 35
+        Me.Label29.Text = "5/25 (20%)"
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Image = CType(resources.GetObject("Label28.Image"), System.Drawing.Image)
+        Me.Label28.Location = New System.Drawing.Point(624, 381)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(40, 13)
+        Me.Label28.TabIndex = 34
+        Me.Label28.Text = "           "
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Image = CType(resources.GetObject("Label27.Image"), System.Drawing.Image)
+        Me.Label27.Location = New System.Drawing.Point(624, 333)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(76, 13)
+        Me.Label27.TabIndex = 33
+        Me.Label27.Text = "                       "
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Image = CType(resources.GetObject("Label26.Image"), System.Drawing.Image)
+        Me.Label26.Location = New System.Drawing.Point(226, 381)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(100, 13)
+        Me.Label26.TabIndex = 32
+        Me.Label26.Text = "                               "
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Image = CType(resources.GetObject("Label25.Image"), System.Drawing.Image)
+        Me.Label25.Location = New System.Drawing.Point(226, 338)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(25, 13)
+        Me.Label25.TabIndex = 31
+        Me.Label25.Text = "      "
         '
         'Label23
         '
@@ -515,6 +615,14 @@ Partial Class Form1
         '
         Me.Flagged.BackColor = System.Drawing.Color.Transparent
         Me.Flagged.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Flagged.Controls.Add(Me.Label15)
+        Me.Flagged.Controls.Add(Me.Label14)
+        Me.Flagged.Controls.Add(Me.Label11)
+        Me.Flagged.Controls.Add(Me.Label10)
+        Me.Flagged.Controls.Add(Me.Label13)
+        Me.Flagged.Controls.Add(Me.Label12)
+        Me.Flagged.Controls.Add(Me.RedBar)
+        Me.Flagged.Controls.Add(Me.BlueBar)
         Me.Flagged.Controls.Add(Me.Label24)
         Me.Flagged.Controls.Add(Me.Label16)
         Me.Flagged.Controls.Add(Me.Label17)
@@ -530,9 +638,86 @@ Partial Class Form1
         Me.Flagged.Controls.Add(Me.Button20)
         Me.Flagged.Controls.Add(Me.Button21)
         Me.Flagged.Location = New System.Drawing.Point(53, 112)
+        Me.Flagged.MinimumSize = New System.Drawing.Size(2, 13)
         Me.Flagged.Name = "Flagged"
         Me.Flagged.Size = New System.Drawing.Size(774, 440)
         Me.Flagged.TabIndex = 30
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(707, 382)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(36, 13)
+        Me.Label15.TabIndex = 51
+        Me.Label15.Text = "13/25"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(707, 339)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(36, 13)
+        Me.Label14.TabIndex = 50
+        Me.Label14.Text = "12/25"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(264, 382)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(59, 13)
+        Me.Label11.TabIndex = 49
+        Me.Label11.Text = "5/25 (20%)"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(339, 339)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(65, 13)
+        Me.Label10.TabIndex = 48
+        Me.Label10.Text = "20/25 (80%)"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Image = CType(resources.GetObject("Label13.Image"), System.Drawing.Image)
+        Me.Label13.Location = New System.Drawing.Point(631, 381)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(73, 13)
+        Me.Label13.TabIndex = 47
+        Me.Label13.Text = "                      "
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Image = CType(resources.GetObject("Label12.Image"), System.Drawing.Image)
+        Me.Label12.Location = New System.Drawing.Point(631, 338)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(67, 13)
+        Me.Label12.TabIndex = 46
+        Me.Label12.Text = "                    "
+        '
+        'RedBar
+        '
+        Me.RedBar.AutoSize = True
+        Me.RedBar.Image = CType(resources.GetObject("RedBar.Image"), System.Drawing.Image)
+        Me.RedBar.Location = New System.Drawing.Point(224, 382)
+        Me.RedBar.Name = "RedBar"
+        Me.RedBar.Size = New System.Drawing.Size(34, 13)
+        Me.RedBar.TabIndex = 45
+        Me.RedBar.Text = "         "
+        '
+        'BlueBar
+        '
+        Me.BlueBar.AutoSize = True
+        Me.BlueBar.Image = CType(resources.GetObject("BlueBar.Image"), System.Drawing.Image)
+        Me.BlueBar.Location = New System.Drawing.Point(224, 339)
+        Me.BlueBar.Name = "BlueBar"
+        Me.BlueBar.Size = New System.Drawing.Size(109, 13)
+        Me.BlueBar.TabIndex = 44
+        Me.BlueBar.Text = "                                  "
         '
         'Label24
         '
@@ -744,11 +929,11 @@ Partial Class Form1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(899, 650)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Complete)
+        Me.Controls.Add(Me.Flagged)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Time)
-        Me.Controls.Add(Me.Flagged)
         Me.Controls.Add(Me.Button22)
         Me.Controls.Add(Me.Label2)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -843,5 +1028,21 @@ Partial Class Form1
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents Button22 As System.Windows.Forms.Button
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents RedBar As System.Windows.Forms.Label
+    Friend WithEvents BlueBar As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label32 As System.Windows.Forms.Label
+    Friend WithEvents Label31 As System.Windows.Forms.Label
+    Friend WithEvents Label30 As System.Windows.Forms.Label
+    Friend WithEvents Label29 As System.Windows.Forms.Label
+    Friend WithEvents Label28 As System.Windows.Forms.Label
+    Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents Label26 As System.Windows.Forms.Label
+    Friend WithEvents Label25 As System.Windows.Forms.Label
 
 End Class
