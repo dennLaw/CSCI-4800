@@ -24,6 +24,8 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.ClrCmpBtn = New System.Windows.Forms.Button()
         Me.ClearBtn = New System.Windows.Forms.Button()
         Me.EmailBtn = New System.Windows.Forms.Button()
@@ -66,7 +68,6 @@ Partial Class Form1
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -91,7 +92,6 @@ Partial Class Form1
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.Button15 = New System.Windows.Forms.Button()
         Me.Button16 = New System.Windows.Forms.Button()
         Me.Button17 = New System.Windows.Forms.Button()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -102,15 +102,8 @@ Partial Class Form1
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Button20 = New System.Windows.Forms.Button()
         Me.Button21 = New System.Windows.Forms.Button()
-        Me.Time = New System.Windows.Forms.Panel()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
         Me.Button22 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button11 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -120,7 +113,6 @@ Partial Class Form1
         Me.Complete.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Flagged.SuspendLayout()
-        Me.Time.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -138,6 +130,25 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(772, 443)
         Me.Panel1.TabIndex = 6
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(120, 7)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(75, 23)
+        Me.Button11.TabIndex = 7
+        Me.Button11.Text = "Search"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.AcceptsReturn = True
+        Me.TextBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption
+        Me.TextBox1.Location = New System.Drawing.Point(13, 7)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.TabIndex = 6
+        Me.TextBox1.Text = "Search"
         '
         'ClrCmpBtn
         '
@@ -373,7 +384,6 @@ Partial Class Form1
         Me.Complete.Controls.Add(Me.Label23)
         Me.Complete.Controls.Add(Me.Label8)
         Me.Complete.Controls.Add(Me.Label5)
-        Me.Complete.Controls.Add(Me.Button7)
         Me.Complete.Controls.Add(Me.Button2)
         Me.Complete.Controls.Add(Me.Button1)
         Me.Complete.Controls.Add(Me.Label6)
@@ -428,7 +438,6 @@ Partial Class Form1
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Image = CType(resources.GetObject("Label28.Image"), System.Drawing.Image)
         Me.Label28.Location = New System.Drawing.Point(624, 381)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(40, 13)
@@ -438,7 +447,6 @@ Partial Class Form1
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Image = CType(resources.GetObject("Label27.Image"), System.Drawing.Image)
         Me.Label27.Location = New System.Drawing.Point(624, 333)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(76, 13)
@@ -448,7 +456,6 @@ Partial Class Form1
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Image = CType(resources.GetObject("Label26.Image"), System.Drawing.Image)
         Me.Label26.Location = New System.Drawing.Point(226, 381)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(100, 13)
@@ -458,7 +465,6 @@ Partial Class Form1
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Image = CType(resources.GetObject("Label25.Image"), System.Drawing.Image)
         Me.Label25.Location = New System.Drawing.Point(226, 338)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(25, 13)
@@ -495,18 +501,9 @@ Partial Class Form1
         Me.Label5.TabIndex = 28
         Me.Label5.Text = "> 30 Hours"
         '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(446, 33)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(75, 23)
-        Me.Button7.TabIndex = 27
-        Me.Button7.Text = "Time"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(343, 33)
+        Me.Button2.Location = New System.Drawing.Point(396, 33)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 26
@@ -516,7 +513,7 @@ Partial Class Form1
         'Button1
         '
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(240, 33)
+        Me.Button1.Location = New System.Drawing.Point(280, 33)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 25
@@ -630,7 +627,6 @@ Partial Class Form1
         Me.Flagged.Controls.Add(Me.Label24)
         Me.Flagged.Controls.Add(Me.Label16)
         Me.Flagged.Controls.Add(Me.Label17)
-        Me.Flagged.Controls.Add(Me.Button15)
         Me.Flagged.Controls.Add(Me.Button16)
         Me.Flagged.Controls.Add(Me.Button17)
         Me.Flagged.Controls.Add(Me.Label18)
@@ -686,7 +682,6 @@ Partial Class Form1
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Image = CType(resources.GetObject("Label13.Image"), System.Drawing.Image)
         Me.Label13.Location = New System.Drawing.Point(631, 381)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(73, 13)
@@ -696,7 +691,6 @@ Partial Class Form1
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Image = CType(resources.GetObject("Label12.Image"), System.Drawing.Image)
         Me.Label12.Location = New System.Drawing.Point(631, 338)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(67, 13)
@@ -706,7 +700,6 @@ Partial Class Form1
         'RedBar
         '
         Me.RedBar.AutoSize = True
-        Me.RedBar.Image = CType(resources.GetObject("RedBar.Image"), System.Drawing.Image)
         Me.RedBar.Location = New System.Drawing.Point(224, 382)
         Me.RedBar.Name = "RedBar"
         Me.RedBar.Size = New System.Drawing.Size(34, 13)
@@ -716,7 +709,6 @@ Partial Class Form1
         'BlueBar
         '
         Me.BlueBar.AutoSize = True
-        Me.BlueBar.Image = CType(resources.GetObject("BlueBar.Image"), System.Drawing.Image)
         Me.BlueBar.Location = New System.Drawing.Point(224, 339)
         Me.BlueBar.Name = "BlueBar"
         Me.BlueBar.Size = New System.Drawing.Size(109, 13)
@@ -753,19 +745,10 @@ Partial Class Form1
         Me.Label17.TabIndex = 41
         Me.Label17.Text = "> 30 Hours"
         '
-        'Button15
-        '
-        Me.Button15.Location = New System.Drawing.Point(446, 33)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(75, 23)
-        Me.Button15.TabIndex = 40
-        Me.Button15.Text = "Time"
-        Me.Button15.UseVisualStyleBackColor = True
-        '
         'Button16
         '
         Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button16.Location = New System.Drawing.Point(343, 33)
+        Me.Button16.Location = New System.Drawing.Point(396, 33)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(75, 23)
         Me.Button16.TabIndex = 39
@@ -774,7 +757,7 @@ Partial Class Form1
         '
         'Button17
         '
-        Me.Button17.Location = New System.Drawing.Point(240, 33)
+        Me.Button17.Location = New System.Drawing.Point(280, 33)
         Me.Button17.Name = "Button17"
         Me.Button17.Size = New System.Drawing.Size(75, 23)
         Me.Button17.TabIndex = 38
@@ -855,60 +838,10 @@ Partial Class Form1
         Me.Button21.TabIndex = 30
         Me.Button21.UseVisualStyleBackColor = False
         '
-        'Time
-        '
-        Me.Time.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Time.Controls.Add(Me.Label22)
-        Me.Time.Controls.Add(Me.Button8)
-        Me.Time.Controls.Add(Me.Button9)
-        Me.Time.Controls.Add(Me.Button10)
-        Me.Time.Location = New System.Drawing.Point(56, 112)
-        Me.Time.Name = "Time"
-        Me.Time.Size = New System.Drawing.Size(772, 443)
-        Me.Time.TabIndex = 0
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Cambria", 40.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(308, 59)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(145, 63)
-        Me.Label22.TabIndex = 44
-        Me.Label22.Text = "Time"
-        '
-        'Button8
-        '
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Location = New System.Drawing.Point(446, 33)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(75, 23)
-        Me.Button8.TabIndex = 41
-        Me.Button8.Text = "Time"
-        Me.Button8.UseVisualStyleBackColor = True
-        '
-        'Button9
-        '
-        Me.Button9.Location = New System.Drawing.Point(343, 33)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(75, 23)
-        Me.Button9.TabIndex = 40
-        Me.Button9.Text = "Flagged"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(240, 33)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(75, 23)
-        Me.Button10.TabIndex = 39
-        Me.Button10.Text = "Completed"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
         'Button22
         '
         Me.Button22.BackColor = System.Drawing.Color.Transparent
-        Me.Button22.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.ListIconFixed
+        Me.Button22.BackgroundImage = Global.WindowsApplication2.My.Resources.Resources.ListIconFixed
         Me.Button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button22.FlatAppearance.BorderSize = 0
         Me.Button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -926,25 +859,6 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(49, 38)
         Me.Label2.TabIndex = 2
         '
-        'TextBox1
-        '
-        Me.TextBox1.AcceptsReturn = True
-        Me.TextBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.TextBox1.Location = New System.Drawing.Point(13, 7)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 6
-        Me.TextBox1.Text = "Search"
-        '
-        'Button11
-        '
-        Me.Button11.Location = New System.Drawing.Point(120, 7)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(75, 23)
-        Me.Button11.TabIndex = 7
-        Me.Button11.Text = "Search"
-        Me.Button11.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -952,11 +866,10 @@ Partial Class Form1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(899, 650)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Complete)
-        Me.Controls.Add(Me.Flagged)
         Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Complete)
         Me.Controls.Add(Me.Panel4)
-        Me.Controls.Add(Me.Time)
+        Me.Controls.Add(Me.Flagged)
         Me.Controls.Add(Me.Button22)
         Me.Controls.Add(Me.Label2)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -977,8 +890,6 @@ Partial Class Form1
         Me.Panel4.PerformLayout()
         Me.Flagged.ResumeLayout(False)
         Me.Flagged.PerformLayout()
-        Me.Time.ResumeLayout(False)
-        Me.Time.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1023,7 +934,6 @@ Partial Class Form1
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
@@ -1033,7 +943,6 @@ Partial Class Form1
     Friend WithEvents Flagged As System.Windows.Forms.Panel
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label17 As System.Windows.Forms.Label
-    Friend WithEvents Button15 As System.Windows.Forms.Button
     Friend WithEvents Button16 As System.Windows.Forms.Button
     Friend WithEvents Button17 As System.Windows.Forms.Button
     Friend WithEvents Label18 As System.Windows.Forms.Label
@@ -1044,11 +953,6 @@ Partial Class Form1
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents Button20 As System.Windows.Forms.Button
     Friend WithEvents Button21 As System.Windows.Forms.Button
-    Friend WithEvents Time As System.Windows.Forms.Panel
-    Friend WithEvents Button8 As System.Windows.Forms.Button
-    Friend WithEvents Button9 As System.Windows.Forms.Button
-    Friend WithEvents Button10 As System.Windows.Forms.Button
-    Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents Button22 As System.Windows.Forms.Button

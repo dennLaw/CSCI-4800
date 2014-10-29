@@ -164,7 +164,7 @@
             flagged = "Flagged"
             completed = "Incomplete"
         Next
-     
+
     End Sub
 
 
@@ -344,14 +344,14 @@
 
     End Sub
     'Leaves Complete panel to Time
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Button7_Click(sender As Object, e As EventArgs)
         Complete.Visible = False
-        Time.Visible = True
+
         Flagged.Visible = False
     End Sub
     'Leaves Time panel to complete
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        Time.Visible = False
+    Private Sub Button10_Click(sender As Object, e As EventArgs)
+
         Complete.Visible = True
         Flagged.Visible = False
 
@@ -370,8 +370,8 @@
                      , New Size(125, 125))
     End Sub
     'Leaves time panel to flagged
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        Time.Visible = False
+    Private Sub Button9_Click(sender As Object, e As EventArgs)
+
         Flagged.Visible = True
         Complete.Visible = False
 
@@ -391,7 +391,7 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Complete.Visible = False
         Flagged.Visible = True
-        Time.Visible = False
+
 
         DrawPieChart({list.getMoreThanThirtyHours().getFlagged().getCount(), list.getMoreThanThirtyHours().getNonFlagged().getCount()} _
                      , {Color.Blue, Color.Red} _
@@ -409,7 +409,7 @@
     Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
         Flagged.Visible = False
         Complete.Visible = True
-        Time.Visible = False
+
 
         DrawPieChart({list.getMoreThanThirtyHours().getComplete().getCount(), list.getMoreThanThirtyHours().getIncomplete().getCount()} _
                      , {Color.Blue, Color.Red} _
@@ -424,16 +424,16 @@
                      , New Size(125, 125))
     End Sub
     'Leaves Flaged to time
-    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+    Private Sub Button15_Click(sender As Object, e As EventArgs)
         Flagged.Visible = False
-        Time.Visible = True
+
         Complete.Visible = False
     End Sub
 
     Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
         Flagged.Visible = False
         Complete.Visible = False
-        Time.Visible = False
+
         Panel1.Visible = True
         Panel4.Visible = False
         Panel2.Visible = True
@@ -539,7 +539,7 @@
                     flagged = "Cleared"
                 End If
 
-                If  Not (sl.getIndex(i).getLast() = "") Then
+                If Not (sl.getIndex(i).getLast() = "") Then
 
 
 
