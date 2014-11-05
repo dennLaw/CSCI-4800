@@ -40,6 +40,7 @@ Partial Class Form1
         Me.StatusCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FlaggedCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.ImportBtn = New System.Windows.Forms.Button()
         Me.ShowAllBtn = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -104,6 +105,9 @@ Partial Class Form1
         Me.Button21 = New System.Windows.Forms.Button()
         Me.Button22 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.Panel1.SuspendLayout()
         CType(Me.DG, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -118,6 +122,7 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label33)
         Me.Panel1.Controls.Add(Me.Button11)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.ClrCmpBtn)
@@ -258,14 +263,28 @@ Partial Class Form1
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Button7)
         Me.Panel2.Controls.Add(Me.ImportBtn)
         Me.Panel2.Controls.Add(Me.ShowAllBtn)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.MenuStrip1)
+        Me.Panel2.Controls.Add(Me.Label22)
         Me.Panel2.Location = New System.Drawing.Point(53, 3)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(772, 94)
         Me.Panel2.TabIndex = 7
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.BackColor = System.Drawing.Color.Transparent
+        Me.Label22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(0, 0)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(28, 31)
+        Me.Label22.TabIndex = 3
+        Me.Label22.Text = "↳"
         '
         'ImportBtn
         '
@@ -310,51 +329,51 @@ Partial Class Form1
         '
         Me.FilterToolStripMenuItem.AutoSize = False
         Me.FilterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowAllToolStripMenuItem, Me.ShowCompletedToolStripMenuItem, Me.ShowIncompletedToolStripMenuItem, Me.ShowFlaggedToolStripMenuItem, Me.ShowUnflaggedToolStripMenuItem, Me.ShowLessThan30HrsToolStripMenuItem, Me.ShowMoreThan30HrsToolStripMenuItem})
-        Me.FilterToolStripMenuItem.Font = New System.Drawing.Font("Georgia", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FilterToolStripMenuItem.Font = New System.Drawing.Font("Georgia", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FilterToolStripMenuItem.Name = "FilterToolStripMenuItem"
         Me.FilterToolStripMenuItem.Size = New System.Drawing.Size(94, 27)
-        Me.FilterToolStripMenuItem.Text = "Filter"
+        Me.FilterToolStripMenuItem.Text = "Filter↓"
         '
         'ShowAllToolStripMenuItem
         '
         Me.ShowAllToolStripMenuItem.Name = "ShowAllToolStripMenuItem"
-        Me.ShowAllToolStripMenuItem.Size = New System.Drawing.Size(323, 28)
+        Me.ShowAllToolStripMenuItem.Size = New System.Drawing.Size(319, 28)
         Me.ShowAllToolStripMenuItem.Text = "Show All"
         '
         'ShowCompletedToolStripMenuItem
         '
         Me.ShowCompletedToolStripMenuItem.Name = "ShowCompletedToolStripMenuItem"
-        Me.ShowCompletedToolStripMenuItem.Size = New System.Drawing.Size(323, 28)
+        Me.ShowCompletedToolStripMenuItem.Size = New System.Drawing.Size(319, 28)
         Me.ShowCompletedToolStripMenuItem.Text = "Show Completed"
         '
         'ShowIncompletedToolStripMenuItem
         '
         Me.ShowIncompletedToolStripMenuItem.Name = "ShowIncompletedToolStripMenuItem"
-        Me.ShowIncompletedToolStripMenuItem.Size = New System.Drawing.Size(323, 28)
+        Me.ShowIncompletedToolStripMenuItem.Size = New System.Drawing.Size(319, 28)
         Me.ShowIncompletedToolStripMenuItem.Text = "Show Incompleted"
         '
         'ShowFlaggedToolStripMenuItem
         '
         Me.ShowFlaggedToolStripMenuItem.Name = "ShowFlaggedToolStripMenuItem"
-        Me.ShowFlaggedToolStripMenuItem.Size = New System.Drawing.Size(323, 28)
+        Me.ShowFlaggedToolStripMenuItem.Size = New System.Drawing.Size(319, 28)
         Me.ShowFlaggedToolStripMenuItem.Text = "Show Flagged"
         '
         'ShowUnflaggedToolStripMenuItem
         '
         Me.ShowUnflaggedToolStripMenuItem.Name = "ShowUnflaggedToolStripMenuItem"
-        Me.ShowUnflaggedToolStripMenuItem.Size = New System.Drawing.Size(323, 28)
+        Me.ShowUnflaggedToolStripMenuItem.Size = New System.Drawing.Size(319, 28)
         Me.ShowUnflaggedToolStripMenuItem.Text = "Show Unflagged"
         '
         'ShowLessThan30HrsToolStripMenuItem
         '
         Me.ShowLessThan30HrsToolStripMenuItem.Name = "ShowLessThan30HrsToolStripMenuItem"
-        Me.ShowLessThan30HrsToolStripMenuItem.Size = New System.Drawing.Size(323, 28)
+        Me.ShowLessThan30HrsToolStripMenuItem.Size = New System.Drawing.Size(319, 28)
         Me.ShowLessThan30HrsToolStripMenuItem.Text = "Show Less Than 30 hrs."
         '
         'ShowMoreThan30HrsToolStripMenuItem
         '
         Me.ShowMoreThan30HrsToolStripMenuItem.Name = "ShowMoreThan30HrsToolStripMenuItem"
-        Me.ShowMoreThan30HrsToolStripMenuItem.Size = New System.Drawing.Size(323, 28)
+        Me.ShowMoreThan30HrsToolStripMenuItem.Size = New System.Drawing.Size(319, 28)
         Me.ShowMoreThan30HrsToolStripMenuItem.Text = "Show More Than 30 hrs."
         '
         'DataSet1
@@ -867,6 +886,28 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(49, 38)
         Me.Label2.TabIndex = 2
         '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.Location = New System.Drawing.Point(361, 5)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(115, 25)
+        Me.Label33.TabIndex = 4
+        Me.Label33.Text = "Showing All"
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(682, 46)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(85, 43)
+        Me.Button7.TabIndex = 4
+        Me.Button7.Text = "Export Students"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'SaveFileDialog1
+        '
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -982,5 +1023,9 @@ Partial Class Form1
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Button11 As System.Windows.Forms.Button
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents Label33 As System.Windows.Forms.Label
+    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
 
 End Class

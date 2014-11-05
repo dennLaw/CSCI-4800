@@ -23,11 +23,19 @@
             ElseIf completedList.getIndex(i).getComplete() = True Then
                 DG.Rows.Add(completedList.getIndex(i).getLast(), completedList.getIndex(i).getFirst(), completedList.getIndex(i).getID(), completedList.getIndex(i).getHours(), completedList.getIndex(i).getEmail(), completed, flagged)
 
+                If completedList.getIndex(i).getFlagged() Then
+                    DG.Rows(i).DefaultCellStyle.BackColor = Color.LightSalmon
+                Else
+                    DG.Rows(i).DefaultCellStyle.BackColor = Color.PowderBlue
+                End If
+
             End If
+
             flagged = "Flagged"
             completed = "Incomplete"
         Next
 
+        Label33.Text = "Showing Completed"
 
     End Sub
 
@@ -53,10 +61,18 @@
             Else
                 DG.Rows.Add(incompletedList.getIndex(i).getLast(), incompletedList.getIndex(i).getFirst(), incompletedList.getIndex(i).getID(), incompletedList.getIndex(i).getHours(), incompletedList.getIndex(i).getEmail(), completed, flagged)
 
+                If incompletedList.getIndex(i).getFlagged() Then
+                    DG.Rows(i).DefaultCellStyle.BackColor = Color.LightSalmon
+                Else
+                    DG.Rows(i).DefaultCellStyle.BackColor = Color.PowderBlue
+                End If
             End If
+
             flagged = "Flagged"
             completed = "Incomplete"
         Next
+
+        Label33.Text = "Showing Incomplete"
 
     End Sub
 
@@ -84,10 +100,17 @@
             ElseIf flaggedList.getIndex(i).getFlagged = True Then
                 DG.Rows.Add(flaggedList.getIndex(i).getLast(), flaggedList.getIndex(i).getFirst(), flaggedList.getIndex(i).getID(), flaggedList.getIndex(i).getHours(), flaggedList.getIndex(i).getEmail(), completed, flagged)
 
+                If flaggedList.getIndex(i).getFlagged() Then
+                    DG.Rows(i).DefaultCellStyle.BackColor = Color.LightSalmon
+                Else
+                    DG.Rows(i).DefaultCellStyle.BackColor = Color.PowderBlue
+                End If
             End If
             flagged = "Flagged"
             completed = "Incomplete"
         Next
+
+        Label33.Text = "Showing Flagged"
 
     End Sub
 
@@ -99,6 +122,7 @@
         Dim student = New Student(form2.LastBx.Text, form2.FirstBx.Text, CInt(form2.IDBx.Text), CInt(form2.HoursBx.Text), form2.EmailBx.Text, True) 'implement tryToFlag Later
         student.forceFlag()
         student.setIncomplete()
+        DG.Rows(DG.Rows.Count - 2).DefaultCellStyle.BackColor = Color.LightSalmon
         list.addStudent(student)
 
     End Sub
@@ -153,14 +177,13 @@
             End If
 
             DG.Rows.Add(list.getIndex(i).getLast(), list.getIndex(i).getFirst(), list.getIndex(i).getID(), list.getIndex(i).getHours(), list.getIndex(i).getEmail(), completed, flagged)
-            'DG.Rows.Add()
-            'DG.Rows(i).Cells(1).Value = list.getIndex(i).getLast()
-            'DG.Rows(i).Cells(2).Value = list.getIndex(i).getFirst()
-            'DG.Rows(i).Cells(3).Value = list.getIndex(i).getID()
-            'DG.Rows(i).Cells(4).Value = list.getIndex(i).getHours()
-            'DG.Rows(i).Cells(5).Value = list.getIndex(i).getEmail()
-            'DG.Rows(i).Cells(6).Value = completed
-            'DG.Rows(i).Cells(1).Value = flagged
+
+            If list.getIndex(i).getFlagged() Then
+                DG.Rows(i).DefaultCellStyle.BackColor = Color.LightSalmon
+            Else
+                DG.Rows(i).DefaultCellStyle.BackColor = Color.PowderBlue
+            End If
+
             flagged = "Flagged"
             completed = "Incomplete"
         Next
@@ -230,10 +253,16 @@
             If student.getHours < 30 And Not (student.getLast() = "") Then
                 DG.Rows.Add(student.getLast(), student.getFirst(), student.getID(), student.getHours(), student.getEmail(), completed, flagged)
 
+                If lThirtyList.getIndex(i).getFlagged() Then
+                    DG.Rows(i).DefaultCellStyle.BackColor = Color.LightSalmon
+                Else
+                    DG.Rows(i).DefaultCellStyle.BackColor = Color.PowderBlue
+                End If
             End If
             flagged = "Flagged"
             completed = "Incomplete"
         Next
+        Label33.Text = "Showing Under 30 Hours"
     End Sub
 
     Private Sub ShowUnflaggedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowUnflaggedToolStripMenuItem.Click
@@ -257,10 +286,16 @@
             ElseIf unFlaggedList.getIndex(i).getFlagged = False Then
                 DG.Rows.Add(unFlaggedList.getIndex(i).getLast(), unFlaggedList.getIndex(i).getFirst(), unFlaggedList.getIndex(i).getID(), unFlaggedList.getIndex(i).getHours(), unFlaggedList.getIndex(i).getEmail(), completed, flagged)
 
+                If unFlaggedList.getIndex(i).getFlagged() Then
+                    DG.Rows(i).DefaultCellStyle.BackColor = Color.LightSalmon
+                Else
+                    DG.Rows(i).DefaultCellStyle.BackColor = Color.PowderBlue
+                End If
             End If
             flagged = "Flagged"
             completed = "Incomplete"
         Next
+        Label33.Text = "Showing Unflagged"
     End Sub
 
     Private Sub ShowMoreThan30HrsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowMoreThan30HrsToolStripMenuItem.Click
@@ -284,10 +319,16 @@
             Else
                 DG.Rows.Add(gThirtyList.getIndex(i).getLast(), gThirtyList.getIndex(i).getFirst(), gThirtyList.getIndex(i).getID(), gThirtyList.getIndex(i).getHours(), gThirtyList.getIndex(i).getEmail(), completed, flagged)
 
+                If gThirtyList.getIndex(i).getFlagged() Then
+                    DG.Rows(i).DefaultCellStyle.BackColor = Color.LightSalmon
+                Else
+                    DG.Rows(i).DefaultCellStyle.BackColor = Color.PowderBlue
+                End If
             End If
             flagged = "Flagged"
             completed = "Incomplete"
         Next
+        Label33.Text = "Showing Over 30 Hours"
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ShowAllBtn.Click
@@ -550,6 +591,21 @@
 
             Next
         End If
+    End Sub
+
+    Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles Button7.Click
+        SaveFileDialog1.Title = "Please Select a File"
+
+
+        SaveFileDialog1.InitialDirectory = "C:temp"
+
+
+        SaveFileDialog1.ShowDialog()
+    End Sub
+
+    Private Sub SaveFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles SaveFileDialog1.FileOk
+        list.writeCSV(SaveFileDialog1.FileName.ToString())
+        ' ImportStudents()
     End Sub
 End Class
 

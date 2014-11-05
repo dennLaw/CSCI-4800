@@ -377,7 +377,9 @@
         Dim dummyList As StudentList = New StudentList()
         dummyList.addStudent("", "", -1, -1, "", False)
 
-        If (dummyList.getIndex(0).Equals(studentList(0))) Then
+        If (studentList.Count = 0) Then
+            Return 0
+        ElseIf dummyList.getIndex(0).Equals(studentList(0)) Then
             Return 0
         Else
             Return studentList.Count
