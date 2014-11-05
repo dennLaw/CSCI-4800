@@ -133,7 +133,7 @@ Partial Class Form1
         '
         'Button11
         '
-        Me.Button11.Location = New System.Drawing.Point(120, 7)
+        Me.Button11.Location = New System.Drawing.Point(119, 5)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(75, 23)
         Me.Button11.TabIndex = 7
@@ -278,7 +278,7 @@ Partial Class Form1
         '
         'ShowAllBtn
         '
-        Me.ShowAllBtn.Location = New System.Drawing.Point(94, 3)
+        Me.ShowAllBtn.Location = New System.Drawing.Point(96, 3)
         Me.ShowAllBtn.Name = "ShowAllBtn"
         Me.ShowAllBtn.Size = New System.Drawing.Size(98, 33)
         Me.ShowAllBtn.TabIndex = 2
@@ -438,6 +438,7 @@ Partial Class Form1
         'Label28
         '
         Me.Label28.AutoSize = True
+        Me.Label28.Image = CType(resources.GetObject("Label28.Image"), System.Drawing.Image)
         Me.Label28.Location = New System.Drawing.Point(624, 381)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(40, 13)
@@ -447,6 +448,7 @@ Partial Class Form1
         'Label27
         '
         Me.Label27.AutoSize = True
+        Me.Label27.Image = CType(resources.GetObject("Label27.Image"), System.Drawing.Image)
         Me.Label27.Location = New System.Drawing.Point(624, 333)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(76, 13)
@@ -456,6 +458,7 @@ Partial Class Form1
         'Label26
         '
         Me.Label26.AutoSize = True
+        Me.Label26.Image = CType(resources.GetObject("Label26.Image"), System.Drawing.Image)
         Me.Label26.Location = New System.Drawing.Point(226, 381)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(100, 13)
@@ -465,6 +468,7 @@ Partial Class Form1
         'Label25
         '
         Me.Label25.AutoSize = True
+        Me.Label25.Image = CType(resources.GetObject("Label25.Image"), System.Drawing.Image)
         Me.Label25.Location = New System.Drawing.Point(226, 338)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(25, 13)
@@ -540,7 +544,7 @@ Partial Class Form1
         '
         'Button6
         '
-        Me.Button6.BackColor = System.Drawing.Color.DimGray
+        Me.Button6.BackColor = System.Drawing.Color.Blue
         Me.Button6.Location = New System.Drawing.Point(533, 333)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(20, 23)
@@ -549,7 +553,7 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button3.BackColor = System.Drawing.Color.Red
         Me.Button3.Location = New System.Drawing.Point(533, 376)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(20, 23)
@@ -682,6 +686,7 @@ Partial Class Form1
         'Label13
         '
         Me.Label13.AutoSize = True
+        Me.Label13.Image = CType(resources.GetObject("Label13.Image"), System.Drawing.Image)
         Me.Label13.Location = New System.Drawing.Point(631, 381)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(73, 13)
@@ -691,6 +696,7 @@ Partial Class Form1
         'Label12
         '
         Me.Label12.AutoSize = True
+        Me.Label12.Image = CType(resources.GetObject("Label12.Image"), System.Drawing.Image)
         Me.Label12.Location = New System.Drawing.Point(631, 338)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(67, 13)
@@ -700,6 +706,7 @@ Partial Class Form1
         'RedBar
         '
         Me.RedBar.AutoSize = True
+        Me.RedBar.Image = CType(resources.GetObject("RedBar.Image"), System.Drawing.Image)
         Me.RedBar.Location = New System.Drawing.Point(224, 382)
         Me.RedBar.Name = "RedBar"
         Me.RedBar.Size = New System.Drawing.Size(34, 13)
@@ -709,6 +716,7 @@ Partial Class Form1
         'BlueBar
         '
         Me.BlueBar.AutoSize = True
+        Me.BlueBar.Image = CType(resources.GetObject("BlueBar.Image"), System.Drawing.Image)
         Me.BlueBar.Location = New System.Drawing.Point(224, 339)
         Me.BlueBar.Name = "BlueBar"
         Me.BlueBar.Size = New System.Drawing.Size(109, 13)
@@ -769,22 +777,22 @@ Partial Class Form1
         Me.Label18.AutoSize = True
         Me.Label18.Location = New System.Drawing.Point(559, 381)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(59, 13)
+        Me.Label18.Size = New System.Drawing.Size(56, 13)
         Me.Label18.TabIndex = 37
-        Me.Label18.Text = "Incomplete"
+        Me.Label18.Text = "Unflagged"
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Location = New System.Drawing.Point(559, 339)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(51, 13)
+        Me.Label19.Size = New System.Drawing.Size(45, 13)
         Me.Label19.TabIndex = 36
-        Me.Label19.Text = "Complete"
+        Me.Label19.Text = "Flagged"
         '
         'Button18
         '
-        Me.Button18.BackColor = System.Drawing.Color.DimGray
+        Me.Button18.BackColor = System.Drawing.Color.Blue
         Me.Button18.FlatAppearance.BorderSize = 0
         Me.Button18.Location = New System.Drawing.Point(533, 333)
         Me.Button18.Name = "Button18"
@@ -794,7 +802,7 @@ Partial Class Form1
         '
         'Button19
         '
-        Me.Button19.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button19.BackColor = System.Drawing.Color.Red
         Me.Button19.Location = New System.Drawing.Point(533, 376)
         Me.Button19.Name = "Button19"
         Me.Button19.Size = New System.Drawing.Size(20, 23)
@@ -806,18 +814,18 @@ Partial Class Form1
         Me.Label20.AutoSize = True
         Me.Label20.Location = New System.Drawing.Point(164, 381)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(59, 13)
+        Me.Label20.Size = New System.Drawing.Size(56, 13)
         Me.Label20.TabIndex = 33
-        Me.Label20.Text = "Incomplete"
+        Me.Label20.Text = "Unflagged"
         '
         'Label21
         '
         Me.Label21.AutoSize = True
         Me.Label21.Location = New System.Drawing.Point(164, 338)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(51, 13)
+        Me.Label21.Size = New System.Drawing.Size(45, 13)
         Me.Label21.TabIndex = 32
-        Me.Label21.Text = "Complete"
+        Me.Label21.Text = "Flagged"
         '
         'Button20
         '
@@ -868,8 +876,8 @@ Partial Class Form1
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Complete)
-        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Flagged)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Button22)
         Me.Controls.Add(Me.Label2)
         Me.MainMenuStrip = Me.MenuStrip1

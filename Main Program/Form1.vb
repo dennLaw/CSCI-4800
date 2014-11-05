@@ -238,7 +238,7 @@
 
     Private Sub ShowUnflaggedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowUnflaggedToolStripMenuItem.Click
         Dim unFlaggedList = New StudentList()
-        unFlaggedList = list.getFlagged()
+        unFlaggedList = list.getNonFlagged()
 
         DG.Rows.Clear()
 
