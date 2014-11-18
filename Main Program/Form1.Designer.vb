@@ -22,11 +22,13 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label33 = New System.Windows.Forms.Label()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ClrCmpBtn = New System.Windows.Forms.Button()
         Me.ClearBtn = New System.Windows.Forms.Button()
         Me.EmailBtn = New System.Windows.Forms.Button()
         Me.DeleteBtn = New System.Windows.Forms.Button()
@@ -40,7 +42,7 @@ Partial Class Form1
         Me.StatusCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FlaggedCl = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.ImportBtn = New System.Windows.Forms.Button()
         Me.ShowAllBtn = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -53,6 +55,7 @@ Partial Class Form1
         Me.ShowUnflaggedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShowLessThan30HrsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShowMoreThan30HrsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label22 = New System.Windows.Forms.Label()
         Me.DataSet1 = New System.Data.DataSet()
         Me.DataTable1 = New System.Data.DataTable()
         Me.OpenFile = New System.Windows.Forms.OpenFileDialog()
@@ -105,8 +108,6 @@ Partial Class Form1
         Me.Button21 = New System.Windows.Forms.Button()
         Me.Button22 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.Panel1.SuspendLayout()
         CType(Me.DG, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,7 +126,6 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Label33)
         Me.Panel1.Controls.Add(Me.Button11)
         Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.ClrCmpBtn)
         Me.Panel1.Controls.Add(Me.ClearBtn)
         Me.Panel1.Controls.Add(Me.EmailBtn)
         Me.Panel1.Controls.Add(Me.DeleteBtn)
@@ -135,6 +135,16 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(772, 443)
         Me.Panel1.TabIndex = 6
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.Location = New System.Drawing.Point(341, 5)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(115, 25)
+        Me.Label33.TabIndex = 4
+        Me.Label33.Text = "Showing All"
         '
         'Button11
         '
@@ -155,27 +165,18 @@ Partial Class Form1
         Me.TextBox1.TabIndex = 6
         Me.TextBox1.Text = "Search"
         '
-        'ClrCmpBtn
-        '
-        Me.ClrCmpBtn.Location = New System.Drawing.Point(682, 389)
-        Me.ClrCmpBtn.Name = "ClrCmpBtn"
-        Me.ClrCmpBtn.Size = New System.Drawing.Size(75, 42)
-        Me.ClrCmpBtn.TabIndex = 5
-        Me.ClrCmpBtn.Text = "Clear Completed"
-        Me.ClrCmpBtn.UseVisualStyleBackColor = True
-        '
         'ClearBtn
         '
-        Me.ClearBtn.Location = New System.Drawing.Point(601, 389)
+        Me.ClearBtn.Location = New System.Drawing.Point(682, 389)
         Me.ClearBtn.Name = "ClearBtn"
         Me.ClearBtn.Size = New System.Drawing.Size(75, 42)
         Me.ClearBtn.TabIndex = 4
-        Me.ClearBtn.Text = "Clear Selected"
+        Me.ClearBtn.Text = "Unflag Selected"
         Me.ClearBtn.UseVisualStyleBackColor = True
         '
         'EmailBtn
         '
-        Me.EmailBtn.Location = New System.Drawing.Point(520, 389)
+        Me.EmailBtn.Location = New System.Drawing.Point(601, 389)
         Me.EmailBtn.Name = "EmailBtn"
         Me.EmailBtn.Size = New System.Drawing.Size(75, 42)
         Me.EmailBtn.TabIndex = 3
@@ -204,10 +205,26 @@ Partial Class Form1
         '
         Me.DG.AllowUserToResizeColumns = False
         Me.DG.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Marlett", 8.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DG.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DG.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.LastCl, Me.FirstCl, Me.IDCl, Me.hours, Me.EmailCl, Me.StatusCl, Me.FlaggedCl})
         Me.DG.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DG.Location = New System.Drawing.Point(13, 33)
         Me.DG.Name = "DG"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DG.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DG.Size = New System.Drawing.Size(744, 350)
         Me.DG.TabIndex = 0
@@ -274,17 +291,14 @@ Partial Class Form1
         Me.Panel2.Size = New System.Drawing.Size(772, 94)
         Me.Panel2.TabIndex = 7
         '
-        'Label22
+        'Button7
         '
-        Me.Label22.AutoSize = True
-        Me.Label22.BackColor = System.Drawing.Color.Transparent
-        Me.Label22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(0, 0)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(28, 31)
-        Me.Label22.TabIndex = 3
-        Me.Label22.Text = "↳"
+        Me.Button7.Location = New System.Drawing.Point(682, 46)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(85, 43)
+        Me.Button7.TabIndex = 4
+        Me.Button7.Text = "Export Students"
+        Me.Button7.UseVisualStyleBackColor = True
         '
         'ImportBtn
         '
@@ -375,6 +389,18 @@ Partial Class Form1
         Me.ShowMoreThan30HrsToolStripMenuItem.Name = "ShowMoreThan30HrsToolStripMenuItem"
         Me.ShowMoreThan30HrsToolStripMenuItem.Size = New System.Drawing.Size(319, 28)
         Me.ShowMoreThan30HrsToolStripMenuItem.Text = "Show More Than 30 hrs."
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.BackColor = System.Drawing.Color.Transparent
+        Me.Label22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(0, 0)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(28, 31)
+        Me.Label22.TabIndex = 3
+        Me.Label22.Text = "↳"
         '
         'DataSet1
         '
@@ -886,25 +912,6 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(49, 38)
         Me.Label2.TabIndex = 2
         '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(361, 5)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(115, 25)
-        Me.Label33.TabIndex = 4
-        Me.Label33.Text = "Showing All"
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(682, 46)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(85, 43)
-        Me.Button7.TabIndex = 4
-        Me.Button7.Text = "Export Students"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
         'SaveFileDialog1
         '
         '
@@ -953,7 +960,6 @@ Partial Class Form1
     Friend WithEvents ShowUnflaggedToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ShowLessThan30HrsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents ClrCmpBtn As System.Windows.Forms.Button
     Friend WithEvents ClearBtn As System.Windows.Forms.Button
     Friend WithEvents EmailBtn As System.Windows.Forms.Button
     Friend WithEvents DeleteBtn As System.Windows.Forms.Button

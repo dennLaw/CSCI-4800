@@ -16,7 +16,7 @@
                 completed = "Complete"                  'Conditional to output if student is complete
             End If
             If (Not completedList.getIndex(i).getFlagged()) Then 'Conditional to output of student is flagged
-                flagged = "Cleared"
+                flagged = "Unflagged"
             End If
             If (completedList.getIndex(i).getLast() = "") Then
 
@@ -54,7 +54,7 @@
                 completed = "Complete"                  'Conditional to output if student is complete
             End If
             If (Not incompletedList.getIndex(i).getFlagged()) Then 'Conditional to output of student is flagged
-                flagged = "Cleared"
+                flagged = "Unflagged"
             End If
             If (incompletedList.getIndex(i).getLast() = "") Then 'do nothing
 
@@ -92,7 +92,7 @@
                 completed = "Complete"                  'Conditional to output if student is complete
             End If
             If (Not flaggedList.getIndex(i).getFlagged()) Then 'Conditional to output of student is flagged
-                flagged = "Cleared"
+                flagged = "Unflagged"
             End If
             If (flaggedList.getIndex(i).getLast() = "") Then
 
@@ -120,9 +120,14 @@
         form2.ShowDialog()
 
         Dim student = New Student(form2.LastBx.Text, form2.FirstBx.Text, CInt(form2.IDBx.Text), CInt(form2.HoursBx.Text), form2.EmailBx.Text, True) 'implement tryToFlag Later
-        student.forceFlag()
+        'student.forceFlag()
         student.setIncomplete()
-        DG.Rows(DG.Rows.Count - 2).DefaultCellStyle.BackColor = Color.LightSalmon
+        If student.getHours >= 30 Then
+            DG.Rows(DG.Rows.Count - 2).DefaultCellStyle.BackColor = Color.LightSalmon
+        Else
+            DG.Rows(DG.Rows.Count - 2).DefaultCellStyle.BackColor = Color.PowderBlue
+        End If
+
         list.addStudent(student)
 
     End Sub
@@ -173,7 +178,7 @@
                 completed = "Complete"                  'Conditional to output if student is complete
             End If
             If (Not list.getIndex(i).getFlagged()) Then 'Conditional to output of student is flagged
-                flagged = "Cleared"
+                flagged = "Unflagged"
             End If
 
             DG.Rows.Add(list.getIndex(i).getLast(), list.getIndex(i).getFirst(), list.getIndex(i).getID(), list.getIndex(i).getHours(), list.getIndex(i).getEmail(), completed, flagged)
@@ -228,6 +233,7 @@
     Private Sub ShowAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowAllToolStripMenuItem.Click
         DG.Rows.Clear()
         ImportStudents()
+        Label33.Text = "Showing All"
     End Sub
 
     Private Sub ShowLessThan30HrsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowLessThan30HrsToolStripMenuItem.Click
@@ -247,7 +253,7 @@
                 completed = "Complete"                  'Conditional to output if student is complete
             End If
             If (Not lThirtyList.getIndex(i).getFlagged()) Then 'Conditional to output of student is flagged
-                flagged = "Cleared"
+                flagged = "Unflagged"
             End If
 
             If student.getHours < 30 And Not (student.getLast() = "") Then
@@ -279,7 +285,7 @@
                 completed = "Complete"                  'Conditional to output if student is complete
             End If
             If (Not unFlaggedList.getIndex(i).getFlagged()) Then 'Conditional to output of student is flagged
-                flagged = "Cleared"
+                flagged = "Unflagged"
             End If
             If (unFlaggedList.getIndex(i).getLast() = "") Then
 
@@ -312,7 +318,7 @@
                 completed = "Complete"                  'Conditional to output if student is complete
             End If
             If (Not gThirtyList.getIndex(i).getFlagged()) Then 'Conditional to output of student is flagged
-                flagged = "Cleared"
+                flagged = "Unflagged"
             End If
             If (gThirtyList.getIndex(i).getLast() = "") Then
 
@@ -336,7 +342,7 @@
         ImportStudents()
     End Sub
 
-    Private Sub ClrCmpBtn_Click(sender As Object, e As EventArgs) Handles ClrCmpBtn.Click
+    Private Sub ClrCmpBtn_Click(sender As Object, e As EventArgs)
 
 
 
@@ -577,14 +583,18 @@
                     completed = "Complete"                  'Conditional to output if student is complete
                 End If
                 If (Not sl.getIndex(i).getFlagged()) Then 'Conditional to output of student is flagged
-                    flagged = "Cleared"
+                    flagged = "Unflagged"
                 End If
 
                 If Not (sl.getIndex(i).getLast() = "") Then
-
-
-
                     DG.Rows.Add(sl.getIndex(i).getLast(), sl.getIndex(i).getFirst(), sl.getIndex(i).getID(), sl.getIndex(i).getHours(), sl.getIndex(i).getEmail(), completed, flagged)
+
+                    If sl.getIndex(i).getFlagged() Then
+                        DG.Rows(i).DefaultCellStyle.BackColor = Color.LightSalmon
+                    Else
+                        DG.Rows(i).DefaultCellStyle.BackColor = Color.PowderBlue
+                    End If
+
                 End If
                 flagged = "Flagged"
                 completed = "Incomplete"
@@ -607,5 +617,6 @@
         list.writeCSV(SaveFileDialog1.FileName.ToString())
         ' ImportStudents()
     End Sub
+
 End Class
 

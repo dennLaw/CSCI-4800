@@ -450,9 +450,9 @@
                                 Case 5
                                     email = currentField
                                 Case 6
-                                    flag = CBool(currentField)
-                                Case 7
                                     complete = CBool(currentField)
+                                Case 7
+                                    flag = CBool(currentField)
                                 Case Else
                                     MsgBox("The CSV file has incorrect input.")
                             End Select
